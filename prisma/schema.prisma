@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Imoveis {
+  id Int @id @default(autoincrement())
+  title String
+  cep Int
+  price Int
+  aluguel Int?
+  precoCondominio Int?
+  description String
+  imageUrl String
+  m2 Int
+  rooms Int
+  bathrooms Int
+  apartamento Boolean?
+  casa Boolean?
+  sala Boolean?
+  terreno Boolean?
+  cobertura Boolean?
+  loja Boolean?
+  apartamentoGarden Boolean?
+  hotel Boolean?
+  mobiliado Boolean?
+  vagas Int?
+  pets Boolean?
+  estadoSigla String
+  cidade String
+  numeroAndares Int?
+  piso Int?
+  suites Int?
+  centro Boolean?
+  aceitaFinanciamento Boolean?
+  aceitaPermuta Boolean?
+  aquecimentoSolar Boolean?
+  armarioCloset Boolean?
+  beiraMar Boolean?
+  portaoEletronico Boolean?
+  areaDeServico Boolean?
+  banheiroDeEmpregada Boolean?
+  campoDeFutebol Boolean?
+  carpeteDeMadeira Boolean?
+  dormitorioDeEmpregada Boolean?
+  pisoCeramico Boolean?
+  pisoArdosia Boolean?
+  pisoCimentoQueimado Boolean?
+  pisoDeGranito Boolean?
+  pisoDeMarmore Boolean?
+  pisoLaminado Boolean?
+  quadraPoliesportiva Boolean?
+  semCondominio Boolean?
+  tacoDeMadeira Boolean?
+  armarioAreaDeServico Boolean?
+  armarioBanheiro Boolean?
+  armarioCozinha Boolean?
+  armarioDormitorioDeEmpregada Boolean?
+  armarioEscritorio Boolean?
+  armarioHomeTheater Boolean?
+  armarioQuarto Boolean?
+  armarioSala Boolean?
+  pisoVinilico Boolean?
+  vestiario Boolean?
+}
