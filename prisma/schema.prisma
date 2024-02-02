@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -11,12 +11,14 @@ model Imoveis {
   id Int @id @default(autoincrement())
   title String
   cep Int
-  price Int
+  price String
   aluguel Int?
   precoCondominio Int?
   description String
-  imageUrl String
+  imageUrl String[]
   m2 Int
+  tamanhoDoLote Int?
+  chacara Boolean?
   rooms Int
   bathrooms Int
   apartamento Boolean?
