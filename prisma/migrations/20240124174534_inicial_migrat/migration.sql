@@ -1,13 +1,13 @@
 -- CreateTable
 CREATE TABLE "Imoveis" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "cep" INTEGER NOT NULL,
     "price" INTEGER NOT NULL,
     "aluguel" INTEGER,
     "precoCondominio" INTEGER,
     "description" TEXT NOT NULL,
-    "imageUrl" TEXT NOT NULL,
+    "imageUrl" TEXT[],
     "m2" INTEGER NOT NULL,
     "rooms" INTEGER NOT NULL,
     "bathrooms" INTEGER NOT NULL,
@@ -22,11 +22,12 @@ CREATE TABLE "Imoveis" (
     "mobiliado" BOOLEAN,
     "vagas" INTEGER,
     "pets" BOOLEAN,
-    "estado" TEXT NOT NULL,
+    "estadoSigla" TEXT NOT NULL,
     "cidade" TEXT NOT NULL,
     "numeroAndares" INTEGER,
     "piso" INTEGER,
     "suites" INTEGER,
+    "centro" BOOLEAN,
     "aceitaFinanciamento" BOOLEAN,
     "aceitaPermuta" BOOLEAN,
     "aquecimentoSolar" BOOLEAN,
@@ -56,5 +57,7 @@ CREATE TABLE "Imoveis" (
     "armarioQuarto" BOOLEAN,
     "armarioSala" BOOLEAN,
     "pisoVinilico" BOOLEAN,
-    "vestiario" BOOLEAN
+    "vestiario" BOOLEAN,
+
+    CONSTRAINT "Imoveis_pkey" PRIMARY KEY ("id")
 );
