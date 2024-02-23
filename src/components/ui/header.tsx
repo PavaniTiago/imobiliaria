@@ -1,4 +1,4 @@
-import { HamburgerMenuIcon, MobileIcon } from "@radix-ui/react-icons"
+import { MobileIcon } from "@radix-ui/react-icons"
 import { SideBarButton } from "./sidebar-button"
 
 export function Header(){

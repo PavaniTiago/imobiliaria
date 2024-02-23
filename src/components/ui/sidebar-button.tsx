@@ -8,21 +8,20 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { HamburgerMenuIcon, MobileIcon } from "@radix-ui/react-icons"
-import { Separator } from "./separator"
 
 export function SideBarButton(){ 
     return (
       <Sheet>
       <SheetTrigger><HamburgerMenuIcon width={30} height={30}/></SheetTrigger>
       <SheetContent className="h-full p-0 border-0">
-        <SheetHeader className="ml-4 mt-6 pl-6 pt-6">
+        <SheetHeader className="ml-4 mt-6 pl-6 pt-6 space-y-0">
           <SheetTitle className="text-lg text-foreground/60">Institucional</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Política de privacidade</SheetDescription>
-          <SheetTitle className="text-lg text-foreground/60">Imóveis</SheetTitle>
+          <SheetTitle className="text-lg text-foreground/60 pt-3">Imóveis</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Encomende seu imóvel</SheetDescription>
-          <SheetTitle className="text-lg text-foreground/60">Serviços</SheetTitle>
+          <SheetTitle className="text-lg text-foreground/60 pt-3">Serviços</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Financiamento de bancos</SheetDescription>
-          <SheetTitle className="text-lg text-foreground/60">Contato</SheetTitle>
+          <SheetTitle className="text-lg text-foreground/60 pt-3">Contato</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Fale conosco</SheetDescription>
         </SheetHeader>
         <SheetFooter className="absolute flex justify-start bottom-0 p-8 w-full bg-primary">

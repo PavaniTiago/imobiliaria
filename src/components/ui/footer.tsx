@@ -4,19 +4,24 @@ import { Share2Icon, ArrowRightIcon } from "@radix-ui/react-icons";
 import { Button } from "./button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "./card";
 import { UseImoveis } from "@/hooks/useImoveis";
+import { useQuery } from "@tanstack/react-query";
 
 export function Footer(){
 
-    const { houseCard } = UseImoveis()
+    const { data } = useQuery({
+        queryKey: ["imoveis"],
+        queryFn: () => UseImoveis(),
+        staleTime: 5 * 1000
+    })
 
-    const cityNames = houseCard?.map((imovel) => { return imovel.cidade })
+    const cityNames = data?.map((imovel) => { return imovel.cidade })
 
     const filteredArray = cityNames?.filter((imovel, idx) => {
         return cityNames.indexOf(imovel) === idx
     })
 
     return (
-        <footer className="flex flex-col items-center justify-end w-full h-full bg-primary">
+        <footer className="flex flex-col items-center justify-end w-full h-screen bg-primary">
             <Card className="w-[350px] h-[380px] flex flex-col justify-between mt-8">
               <CardHeader className="gap-2">
                 <Share2Icon width={35} height={35} className="text-foreground/70"/>
@@ -34,8 +39,8 @@ export function Footer(){
             <div className="w-full max-w-4xl flex flex-col justify-between items-start font-semibold text-start text-white mt-12">
             <h2 className="text-3xl">Imóveis por região</h2>
                 <div className="flex justify-between w-full mt-6">
-                {filteredArray?.map((name) => (
-                    <span className="text-md hover:text-white/80 transition cursor-pointer">{name}</span>
+                {filteredArray?.map((name, idx) => (
+                    <span className="text-md hover:text-white/80 transition cursor-pointer" key={idx}>{name}</span>
                 ))}
                 </div>
             </div>

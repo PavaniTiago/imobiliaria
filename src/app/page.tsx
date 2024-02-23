@@ -8,8 +8,12 @@ import { ImovelCard } from "@/components/ui/imovel-card";
 import { SelectGroupRadio } from "@/components/ui/select-radio-group";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { WhattsApButton } from "@/components/ui/whattsap-button";
+import { SelectItem } from "@/components/ui/select";
+import { OpenModal } from "@/components/ui/open-modal";
+import { SearchForm } from "@/components/ui/serch-form";
 
 export default function Home() {
+
   return (
     <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary'>
       <WhattsApButton />
@@ -18,14 +22,9 @@ export default function Home() {
           <Image src="https://i.ibb.co/f4ZN9Q0/L-966f121b838c4c37ab11430267ed6020.jpg" 
           className="brightness-75 object-cover" alt="banner image" width={0} height={0} sizes="100vw" fill priority/>
         </div>
-          <div className="flex flex-col items-center justify-center w-full h-full absolute text-white font-montSerrat gap-6">
-            <h1 className="text-5xl font-semibold">Compre ou Alugue Agora</h1>
-            <div className="flex w-fit p-3 bg-primary shadow-lg rounded-xl gap-6">
-              <Search title="Pretensão"/>
-              <SelectGroupRadio title="Tipo Imóvel" icon={<HomeIcon />}/>
-              <InputSearch placeholder="Digite condomínio, região, bairro ou cidade"/>
-              <Button variant="secondary" size="lg" className="hover:bg-neutral-200 transition py-6">Encontrar Imóvel</Button>
-            </div>
+          <div className="flex flex-col items-center justify-center w-full h-full absolute text-white  gap-6">
+            <h1 className="text-5xl font-semibold font-montSerrat">Compre ou Alugue Agora</h1>
+            <SearchForm />
           </div>
       </div>
         <div className="flex items-center justify-center h-full w-full py-12">

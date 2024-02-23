@@ -6,27 +6,25 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import { SelectProps } from "@radix-ui/react-select";
 import React from "react";
 
-  interface searchProps {
+  interface searchProps extends SelectProps {
     title: string;
     icon?: React.ReactNode;
+    children?: React.ReactNode;
+    sendToFather: (value: any) => void;
   }
 
-export const Search = ({ title, icon }: searchProps) => {
+export const Search = ({ title, icon, children, sendToFather }: searchProps) => {
     return (
-            <Select>
-                <SelectTrigger className="w-[220px] py-6 text-md gap-2">
+            <Select onValueChange={(value) => sendToFather(value)}>
+                <SelectTrigger className="w-[220px] py-6 gap-2">
                     {icon}
                     <SelectValue placeholder={title} />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="comprar">Comprar</SelectItem>
-                      <SelectItem value="alugar">Alugar</SelectItem>
-                      <SelectItem value="novos">Novos</SelectItem>
-                      <SelectItem value="código">Código</SelectItem>
-                    </SelectGroup>
+                      {children}
                 </SelectContent>
             </Select>
     )

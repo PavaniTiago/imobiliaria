@@ -9,22 +9,24 @@ import {
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import React from "react";
+import { SelectProps } from "@radix-ui/react-select";
 
-  interface searchProps {
+  interface searchProps extends SelectProps {
     title: string;
     icon?: React.ReactNode;
+    sendToFather: (value: string) => void
   }
 
-export function SelectGroupRadio({ title, icon }: searchProps) {
+export function SelectGroupRadio({ title, icon, sendToFather }: searchProps) {
     return (
             <Select>
-                <SelectTrigger className="w-[260px] py-6 text-md">
-                    <span className="pt-1">{icon}</span>
+                <SelectTrigger className="w-[260px] py-6 ">
+                    <span>{icon}</span>
                     <SelectValue placeholder={title} />
                 </SelectTrigger>
                 <SelectContent>
                     <SelectGroup className="px-3 py-3">
-                        <RadioGroup defaultValue="Todos os Imóveis">
+                        <RadioGroup onValueChange={(value) => sendToFather(value)} defaultValue="Todos os Imóveis">
                         <div className="flex items-center space-x-2">
                             <RadioGroupItem value="Todos os Imóveis" id="r1"/>
                             <Label htmlFor="r1">Todos os Imóveis</Label>
