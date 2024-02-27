@@ -1,15 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Search } from "@/components/ui/search";
 import Image from "next/image";
-import { ArrowRightIcon, HomeIcon, PersonIcon, Share2Icon } from "@radix-ui/react-icons"
-import { InputSearch } from "@/components/ui/input-search";
+import { ArrowRightIcon, PersonIcon, Share2Icon } from "@radix-ui/react-icons"
 import { ImovelBanner } from "@/components/ui/imovel-banner";
 import { ImovelCard } from "@/components/ui/imovel-card";
-import { SelectGroupRadio } from "@/components/ui/select-radio-group";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { WhattsApButton } from "@/components/ui/whattsap-button";
-import { SelectItem } from "@/components/ui/select";
-import { OpenModal } from "@/components/ui/open-modal";
 import { SearchForm } from "@/components/ui/serch-form";
 
 export default function Home() {

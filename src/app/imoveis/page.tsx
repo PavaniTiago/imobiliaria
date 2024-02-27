@@ -2,12 +2,12 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
+import { FiltersButtons } from "@/components/ui/filters-button"
 import { WhattsApButton } from "@/components/ui/whattsap-button"
 import { UseImoveisByFilter } from "@/hooks/useImovelByFilter"
 import { capitalizeFirstLetter } from "@/lib/utils"
 import { useQuery } from "@tanstack/react-query"
 import Image from "next/image"
-import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 
 export default function Imovel() {
@@ -18,21 +18,29 @@ export default function Imovel() {
     const imovelType = String(serchParams.get('imovelType'))
     const mobiliado = String(serchParams.get('mobiliado'))
     const price = String(serchParams.get('price'))
+    const name = String(serchParams.get('name'))
 
     const router = useRouter()
 
+    const validadeData = () => {
+        if(name !== "null" || null){
+           return UseImoveisByFilter(rooms, suites, imovelType, mobiliado, price, name)
+        }else{
+           return UseImoveisByFilter(rooms, suites, imovelType, mobiliado, price)
+        }
+    }
+
     const { data } = useQuery({
       queryKey: ["filtered-imoveis"],
-      queryFn: () => UseImoveisByFilter(rooms, suites, imovelType, mobiliado, price),
+      queryFn: () => validadeData()
     })
-
-    console.log(data)
 
     return (
         <div className="relative flex flex-col items-center justify-center w-full h-full bg-primary pt-32">
             <WhattsApButton />
-            <div className="w-full max-w-6xl">
+            <div className="flex justify-between items-start w-full max-w-6xl">
                 <h2 className="text-2xl font-semibold text-start text-white pb-8">Imóveis à venda {data?.length}</h2>
+                <FiltersButtons />
             </div>
             <div className="grid grid-cols-4 gap-4 max-w-6xl pb-16">
                 {data?.map((imovel, idx) => (

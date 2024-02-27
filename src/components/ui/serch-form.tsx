@@ -18,10 +18,11 @@ export function SearchForm(){
     const [quartos, setQuartos] = useState('')
     const [suites, setSuites] = useState('')
     const [price, setPrice] = useState('')
+    const [name, setName] = useState('')
     const [mobiliado, setMobiliado] = useState<boolean>()
 
     async function SetSearch(){
-        router.push(`/imoveis${quartos || suites || mobiliado || imovelType || price ? '?' : ''}${quartos ? `rooms=${quartos}` : ''}${suites ? `&suites=${suites}` : ''}${imovelType ? `&imovelType=${imovelType}` : ''}${mobiliado ? `&mobiliado=true` : ''}${price ? `&price=${price}` : ''}`)
+        router.push(`/imoveis${quartos || suites || mobiliado || imovelType || price || name ? '?' : ''}${quartos ? `rooms=${quartos}` : ''}${suites ? `&suites=${suites}` : ''}${imovelType ? `&imovelType=${imovelType}` : ''}${mobiliado ? `&mobiliado=true` : ''}${price ? `&price=${price}` : ''}${name ? `name=${name}` : ''}`)
     }
 
     const quartoProps = (data: string) => {
@@ -52,7 +53,7 @@ export function SearchForm(){
                 <SelectItem value="">Novos</SelectItem>
             </Search> */}
             <SelectGroupRadio sendToFather={imovelTypesProps} title="Tipo Imóvel" icon={<HomeIcon />}/>
-            <InputSearch placeholder="Digite condomínio, região, bairro ou cidade"/>
+            <InputSearch value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite condomínio, região, bairro ou cidade"/>
             <Button className="rounded-2xl w-[220px] py-4 gap-1 border self-center" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Menos" : "Mais"} Filtros <DragHandleDots2Icon width={20} height={20}/></Button>
             {isOpen && (    
                 <div className="flex absolute h-full bg-primary -bottom-16 p-3 w-full justify-between items-center left-0 rounded-b-lg">

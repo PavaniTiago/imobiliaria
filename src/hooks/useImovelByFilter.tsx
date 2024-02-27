@@ -1,8 +1,21 @@
-import { ImovelProps } from "@/interface/imovel-props"
+import { ImovelProps } from "@/interface/imovel-props";
 
-export async function UseImoveisByFilter(rooms: number, suites: number, imovelType: string, mobiliado: string, price: string) {
-    const res = await fetch(`/api/imoveis${rooms || suites || mobiliado || imovelType ? '?' : ''}${rooms ? `rooms=${rooms}` : ''}${suites ? `&suites=${suites}` : ''}${imovelType ? `&${imovelType}=true` : ''}${mobiliado ? `&mobiliado=true` : ''}${price ? `&price=${price}` : ''}`)
-    const imoveis = (await res.json().then((res) => res.imoveis)) as ImovelProps[]
-
-    return imoveis
-} 
+export async function UseImoveisByFilter(rooms: number, suites: number, imovelType: string, mobiliado: string, price: string, name?: string) {
+    // if (name) {
+    //     const res = await fetch(`/api/imovelByName?name=${name}`);
+    //     const imoveis = await res.json();
+    //     return imoveis.imoveis as ImovelProps[];
+    // }
+        const queryParams = new URLSearchParams();
+        if (rooms) queryParams.append('rooms', rooms.toString());
+        if (suites) queryParams.append('suites', suites.toString());
+        if (imovelType) queryParams.append(imovelType, 'true');
+        if (mobiliado) queryParams.append('mobiliado', 'true');
+        if (price) queryParams.append('price', price); 
+        
+        const queryString = queryParams.toString();
+        
+        const res = await fetch(`${name ? `/api/imovelByName?name=${name}` : `/api/imoveis${queryString ? '?' + queryString : ''}`} `);
+        const imoveis = await res.json();
+        return imoveis.imoveis as ImovelProps[];
+}
