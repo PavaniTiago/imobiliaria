@@ -9,6 +9,7 @@ import { capitalizeFirstLetter } from "@/lib/utils"
 import { useQuery } from "@tanstack/react-query"
 import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation"
+import { useState } from "react"
 
 export default function Imovel() {
     
@@ -40,7 +41,7 @@ export default function Imovel() {
             <WhattsApButton />
             <div className="flex justify-between items-start w-full max-w-6xl">
                 <h2 className="text-2xl font-semibold text-start text-white pb-8">Imóveis à venda {data?.length}</h2>
-                <FiltersButtons />
+                <FiltersButtons imovelType={imovelType} mobiliado={mobiliado} name={name} price={price} rooms={rooms} suites={suites} />
             </div>
             <div className="grid grid-cols-4 gap-4 max-w-6xl pb-16">
                 {data?.map((imovel, idx) => (
