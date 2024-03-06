@@ -20,9 +20,11 @@ import { SelectProps } from "@radix-ui/react-select";
 export function SelectGroupRadio({ title, icon, sendToFather }: searchProps) {
     return (
             <Select>
-                <SelectTrigger className="w-[260px] py-6 ">
-                    <span>{icon}</span>
-                    <SelectValue placeholder={title} />
+                <SelectTrigger className="flex items-center justify-between w-full lg:w-[260px] py-7 bg-primary">
+                    <div className="flex items-center justify-center gap-4">
+                        <span>{icon}</span>
+                        <SelectValue placeholder={title} />
+                    </div>
                 </SelectTrigger>
                 <SelectContent>
                     <SelectGroup className="px-3 py-3">

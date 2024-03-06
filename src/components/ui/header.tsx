@@ -7,8 +7,8 @@ export function Header(){
         <span className="text-lg text-white">LOGO</span>
         <div className="flex items-center justify-center gap-12">
             <div className="flex items-center justify-center gap-4">
-                <MobileIcon width={25} height={25}/>
-                <span className="text-lg text-white">(99) 99999-9999</span>
+                <MobileIcon width={25} height={25} className="hidden lg:block"/>
+                <span className="text-lg text-white hidden lg:block">(99) 99999-9999</span>
             </div>
             <SideBarButton />
         </div>

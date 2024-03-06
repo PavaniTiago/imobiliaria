@@ -46,17 +46,12 @@ export function SearchForm(){
     }    
 
     return (
-        <div className="flex relative w-fit p-3 bg-primary shadow-lg rounded-xl gap-6">
-            {/* <Search sendToFather={quartoProps} title="Pretensão">
-                <SelectItem value="">Comprar</SelectItem>
-                <SelectItem value="alugar">Alugar</SelectItem>
-                <SelectItem value="">Novos</SelectItem>
-            </Search> */}
+        <div className="flex flex-col lg:flex-row items-center relative w-full lg:w-fit p-6 lg:p-3 lg:bg-primary shadow-lg rounded-xl gap-6">
             <SelectGroupRadio sendToFather={imovelTypesProps} title="Tipo Imóvel" icon={<HomeIcon />}/>
-            <InputSearch value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite condomínio, região, bairro ou cidade"/>
-            <Button className="rounded-2xl w-[220px] py-4 gap-1 border self-center" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Menos" : "Mais"} Filtros <DragHandleDots2Icon width={20} height={20}/></Button>
+            <InputSearch value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite a cidade desejada"/>
+            <Button className="relative rounded-2xl hidden lg:block w-[220px] gap-1 border" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Menos" : "Mais"} Filtros <DragHandleDots2Icon className="absolute bottom-1.5 left-2" width={20} height={20}/></Button>
             {isOpen && (    
-                <div className="flex absolute h-full bg-primary -bottom-16 p-3 w-full justify-between items-center left-0 rounded-b-lg">
+                <div className="flex absolute h-full bg-primary -bottom-[72px] p-3 w-full justify-between items-center left-0 rounded-b-lg">
                     <Search sendToFather={priceProps} title="Preço de venda">
                         <SelectItem value="400000">até 400.000</SelectItem>
                         <SelectItem value="600000">acima 600.000</SelectItem>
@@ -83,7 +78,7 @@ export function SearchForm(){
                     </Search>
                 </div>
             )}
-            <Button variant="secondary" size="lg" className="hover:bg-neutral-200 transition py-6" onClick={SetSearch}>Encontrar Imóvel</Button>
+            <Button variant="secondary" className="hover:bg-neutral-200 w-full lg:w-52 transition py-7" onClick={SetSearch}>Encontrar Imóvel</Button>
         </div>
     )
 }

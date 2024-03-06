@@ -14,7 +14,7 @@ export function SideBarButton(){
       <Sheet>
       <SheetTrigger><HamburgerMenuIcon width={30} height={30}/></SheetTrigger>
       <SheetContent className="h-full p-0 border-0">
-        <SheetHeader className="ml-4 mt-6 pl-6 pt-6 space-y-0">
+        <SheetHeader className="lg:ml-4 mt-6 lg:pl-6 pt-6 space-y-0">
           <SheetTitle className="text-lg text-foreground/60">Institucional</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Política de privacidade</SheetDescription>
           <SheetTitle className="text-lg text-foreground/60 pt-3">Imóveis</SheetTitle>

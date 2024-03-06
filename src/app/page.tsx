@@ -18,14 +18,18 @@ export default function Home() {
           className="brightness-75 object-cover" alt="banner image" width={0} height={0} sizes="100vw" fill priority/>
         </div>
           <div className="flex flex-col items-center justify-center w-full h-full absolute text-white  gap-6">
-            <h1 className="text-5xl font-semibold font-montSerrat">Compre ou Alugue Agora</h1>
+            <h1 className="text-3xl text-center lg:text-5xl font-semibold font-montSerrat">Compre ou Alugue Agora</h1>
             <SearchForm />
           </div>
       </div>
-        <div className="flex items-center justify-center h-full w-full py-12">
+      <div>
+      </div>
+        <div className="h-full w-full py-12 hidden lg:block">
+          <div className="flex justify-center items-center">
             <ImovelBanner />
+          </div>
         </div>
-        <div className="w-full">
+        <div className="w-full hidden lg:block">
           <h2 className="text-2xl font-semibold text-center text-secondary">Sua família merece o melhor</h2>
           <div className="w-full flex justify-center gap-4 py-6">
             <Button variant="secondary" className="bg-transparent text-white outline outline-2 rounded-3xl hover:text-neutral-300">Destaques</Button>
@@ -36,8 +40,9 @@ export default function Home() {
               <ImovelCard />
             </div>
           </div>
+        </div>
           <div className="flex flex-col items-center justify-center w-full py-20">
-            <div className="flex flex-wrap items-center justify-center w-2/4 gap-6">
+            <div className="flex flex-wrap items-center justify-center lg:w-2/4 gap-6">
             <Card className="w-[320px] h-[350px] flex flex-col justify-between">
               <CardHeader className="gap-2">
                 <PersonIcon width={35} height={35} className="text-foreground/70"/>
@@ -66,7 +71,6 @@ export default function Home() {
             </Card>
             </div>
           </div>
-        </div>
     </div> 
   )
 }

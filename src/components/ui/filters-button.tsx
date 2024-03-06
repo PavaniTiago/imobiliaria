@@ -17,9 +17,10 @@ interface searchProps extends SelectProps {
     mobiliado: string;
     price: string;
     name: string;
+    sendToFather: (value: string) => void
 }
 
-export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suites }: searchProps){
+export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suites, sendToFather }: searchProps){
 
     const [isVisible, setIsVisible] = useState(false)
     const [data, setData] = useState<string[]>([])
@@ -32,27 +33,25 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
         setData(prevData => [...prevData, value])
     }
 
-
     async function SetSearch() {
         const queryParams = [];
       
         const formatParam = (key: any, value: any) => `${key}=${value}`;
-      
+        
         queryParams.push(...data.map((value) => `${value}=true`));
       
-        // Adiciona outros parâmetros, se estiverem definidos
         if (rooms !== null) queryParams.push(formatParam('rooms', rooms));
         if (suites !== null) queryParams.push(formatParam('suites', suites));
-        if (imovelType !== "null" || imovelType !== null) queryParams.push(formatParam('imovelType', imovelType));
-        if (mobiliado !== "null" || mobiliado !== null) queryParams.push('mobiliado=true');
-        if (price !== "null" || price !== null) queryParams.push(formatParam('price', price));
-        if (name !== "null" || name !== null) queryParams.push(formatParam('name', name));
-        if (aceitaPets !== "null" || aceitaPets !== null) queryParams.push(formatParam('aceitaPets', aceitaPets));
-        if (bathrooms !== "null" || bathrooms !== null) queryParams.push(formatParam('bathrooms', bathrooms));
-        if (vagas !== "null" || vagas !== null) queryParams.push(formatParam('vagas', vagas));
+        if (imovelType !== "null" && imovelType !== null) queryParams.push(formatParam('imovelType', imovelType));
+        if (mobiliado !== "null" && mobiliado !== null) queryParams.push('mobiliado=true');
+        if (price !== "null" && price !== null) queryParams.push(formatParam('price', price));
+        if (name !== "null" && name !== null) queryParams.push(formatParam('name', name));
+        if (aceitaPets !== "null" && aceitaPets !== null) queryParams.push(formatParam('aceitaPets', aceitaPets));
+        if (bathrooms !== "null" && bathrooms !== null) queryParams.push(formatParam('bathrooms', bathrooms));
+        if (vagas !== "null" && vagas !== null) queryParams.push(formatParam('vagas', vagas));
       
         const queryString = queryParams.join('&');
-      
+        sendToFather(queryString)
         router.push((`/imoveis${queryString ? '?' : ''}${queryString}`))
       }
     
@@ -61,32 +60,32 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
             <SheetTrigger><Button className="rounded-3xl gap-2 hover:bg-neutral-100 transition-colors" variant="secondary">Mais filtros <Plus size={16}/></Button></SheetTrigger>
             <SheetContent className="flex flex-col sm:max-w-lg">
                 <h2>Mais filtros</h2>
-                <div className="w-full h-full space-y-4 relative mt-8">
-                    <div className="flex items-center justify-between">
-                        <Label className="text-lg font-medium">Aceita pet?</Label>
+                <div className="w-full h-full space-y-4 relative lg:mt-8">
+                    <div className="flex flex-wrap items-center gap-2 justify-between">
+                        <Label className="lg:text-lg font-medium">Aceita pet?</Label>
                         <div className="space-x-2">
-                            <Button value="true" onClick={() => setAceitaPets("true")}>Sim</Button>
-                            <Button value="">Não</Button>
+                            <Button className="w-12 h-8" value="true" onClick={() => setAceitaPets("true")}>Sim</Button>
+                            <Button className="w-12 h-8" value="">Não</Button>
                         </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                        <Label className="text-lg font-medium">Banheiros</Label>
+                    <div className="flex flex-wrap items-center gap-2 justify-between">
+                        <Label className="lg:text-lg font-medium">Banheiros</Label>
                         <div className="space-x-2">
-                            <Button value="1" onClick={() => setBathrooms("1")}>1+</Button>
-                            <Button value="2" onClick={() => setBathrooms("2")}>2+</Button>
-                            <Button value="3" onClick={() => setBathrooms("3")}>3+</Button>
-                            <Button value="4" onClick={() => setBathrooms("4")}>4+</Button>
-                            <Button value="5" onClick={() => setBathrooms("5")}>5+</Button>
+                            <Button className="w-12 h-8" value="1" onClick={() => setBathrooms("1")}>1+</Button>
+                            <Button className="w-12 h-8" value="2" onClick={() => setBathrooms("2")}>2+</Button>
+                            <Button className="w-12 h-8" value="3" onClick={() => setBathrooms("3")}>3+</Button>
+                            <Button className="w-12 h-8" value="4" onClick={() => setBathrooms("4")}>4+</Button>
+                            <Button className="w-12 h-8" value="5" onClick={() => setBathrooms("5")}>5+</Button>
                         </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                        <Label className="text-lg font-medium">Vagas</Label>
+                    <div className="flex flex-wrap items-center gap-2 justify-between">
+                        <Label className="lg:text-lg font-medium">Vagas</Label>
                         <div className="space-x-2">
-                            <Button value="1" onClick={() => setVagas("1")}>1+</Button>
-                            <Button value="2" onClick={() => setVagas("2")}>2+</Button>
-                            <Button value="3" onClick={() => setVagas("3")}>3+</Button>
-                            <Button value="4" onClick={() => setVagas("4")}>4+</Button>
-                            <Button value="5" onClick={() => setVagas("5")}>5+</Button>
+                            <Button className="w-12 h-8" value="1" onClick={() => setVagas("1")}>1+</Button>
+                            <Button className="w-12 h-8" value="2" onClick={() => setVagas("2")}>2+</Button>
+                            <Button className="w-12 h-8" value="3" onClick={() => setVagas("3")}>3+</Button>
+                            <Button className="w-12 h-8" value="4" onClick={() => setVagas("4")}>4+</Button>
+                            <Button className="w-12 h-8" value="5" onClick={() => setVagas("5")}>5+</Button>
                         </div>
                     </div>
                     <div className="mt-8">    

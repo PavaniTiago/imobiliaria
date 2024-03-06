@@ -12,13 +12,14 @@ import { Shower, Bed, Car, Dog, Bathtub } from "@phosphor-icons/react"
 import { Separator } from '@/components/ui/separator'
 import { PriceCard } from '@/components/ui/price-card'
 import { WhattsApButton } from '@/components/ui/whattsap-button'
+import { Loading } from '@/components/ui/loading'
 
 function page() {
 
     const serchParams = useSearchParams() 
     const id = Number(serchParams.get('id'))
 
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
       queryKey: ["imovel", id],
       queryFn: () => UseImovelById(id),
     })
@@ -26,25 +27,25 @@ function page() {
   return (
     <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary pt-28'>
       <WhattsApButton />
-      <div className='flex flex-col items-start justify-start w-full px-[14rem] 2xl:px-[22rem] h-full'>
-          {data?.map((item, idx) => (
+      <div className='flex flex-col items-start justify-start w-full px-10 lg:px-[14rem] 2xl:px-[22rem] h-full'>
+          {isLoading ?  <div className='flex h-screen pb-28 w-full items-center justify-center'><Loading /></div> : data?.map((item, idx) => (
             <>
-              <h2 className='text-white text-3xl font-semibold'>{`${item?.title}-${item?.estadoSigla}`}</h2>
+              <h2 className='text-white text-2xl lg:text-3xl font-semibold'>{`${item?.title}-${item?.estadoSigla}`}</h2>
               <Card className='w-full rounded-lg mt-8 bg-transparent overflow-hidden relative'>
-                <CardContent className='grid grid-flow-col grid-rows-2 w-full h-full gap-2'>
+                <CardContent className='grid lg:grid-flow-col grid-rows-2 w-full h-full gap-2'>
                   {item?.imageUrl.map((image, idx) => ((
                       <Image key={idx} src={image} alt="imagem de imóvel" className="h-full w-full [&:nth-child(1)]:col-span-2 [&:nth-child(1)]:row-span-2 object-cover hover:brightness-90 transition-all cursor-pointer" width={0} height={0} sizes="100vw" quality={100}/>
                   ))).splice(0, 5)}
                 </CardContent>
                 <Gallery>
-                  {item?.imageUrl.map((image, idx) => ((
+                  {isLoading ? <Loading /> : item?.imageUrl.map((image, idx) => ((
                       <Image key={idx} src={image} alt="imagem de imóvel" className="h-full w-full object-cover hover:brightness-90 transition-all cursor-pointer" width={0} height={0} sizes="100vw" quality={100}/>
                   )))}
                 </Gallery>
               </Card>
-              <div className='flex items-center justify-between w-full mt-16'>
+              <div className='flex flex-col lg:flex-row items-center justify-between w-full mt-2 lg:mt-16'>
                 <div className='max-w-xl 2xl:max-w-2xl'>
-                  <h2 className='text-white text-2xl 2xl:text-3xl font-medium mt-8 max-w-2xl 2xl:max-w-3xl'>
+                  <h2 className='text-white text-xl lg:text-2xl 2xl:text-3xl font-medium mt-8 max-w-2xl 2xl:max-w-3xl'>
                     {`Sobre a 
                       ${item.terreno ? "terreno" : ""} 
                       ${item.casa ? "casa" : ""} 
@@ -60,8 +61,8 @@ function page() {
 
                   <Separator className='max-w-2xl 2xl:max-w-3xl bg-neutral-300/90 mt-4'/>
 
-                  <div className='flex gap-8 items-center justify-start max-w-2xl 2xl:max-w-3xl mt-4'>
-                    <div className='flex gap-2 items-center justify-center text-neutral-200'>
+                  <div className='flex gap-4 lg:gap-8 items-center justify-start max-w-2xl 2xl:max-w-3xl mt-4'>
+                    <div className='flex flex-col lg:flex-row gap-2 items-center justify-center text-neutral-200'>
                         <CornersIcon width={25} height={25} className='text-neutral-300'/>
                         <span className='text-sm'>{item.m2} m<span className='align-super text-xs'>2</span>
                         <br />  Área útil
@@ -69,7 +70,7 @@ function page() {
                     </div> 
                     {item?.terreno ? "" : 
                       (
-                        <div className='flex items-center justify-start gap-8 max-w-2xl 2xl:max-w-3xl'>
+                        <div className='flex items-center flex-wrap justify-start gap-8 max-w-2xl 2xl:max-w-3xl'>
                           <div className='flex flex-col items-start justify-start text-neutral-200'>
                             <Bed size={20} className='text-neutral-300'/>
                             <span className='text-sm'>{item?.rooms} {item?.rooms > 1 ? "Quartos" : "Quarto"}</span>
@@ -100,7 +101,7 @@ function page() {
                       )
                     }
                   </div>
-                  <p className='text-md max-w-2xl 2xl:max-w-3xl text-white mt-8 leading-snug'>{item?.description}</p>
+                  <p className='text-md max-w-2xl 2xl:max-w-3xl text-white mt-8 leading-snug mb-6 lg:mb-0'>{item?.description}</p>
                   
                 </div>
                 <PriceCard aluguel={item?.aluguel} precoCondominio={item?.precoCondominio} price={item?.price}/>
@@ -110,7 +111,7 @@ function page() {
               <div className='max-w-2xl 2xl:max-w-3xl mt-12'>
             {data?.map((item, index) => (
               <div className="flex flex-col items-start gap-3 max-w-2xl 2xl:max-w-3xl justify-center"> 
-              <h1 className='text-xl font-semibold text-white'>Características</h1>
+              <h1 className='text-xl font-semibold text-white'>{item.mobiliado || item.aceitaFinanciamento || item.aceitaPermuta || item.apartamentoGarden || item.aquecimentoSolar || item.areaDeServico || item.armarioBanheiro || item.armarioCloset || item.armarioCozinha || item.armarioDormitorioDeEmpregada || item.armarioEscritorio || item.armarioHomeTheater || item.armarioQuarto || item.armarioSala || item.banheiroDeEmpregada || item.beiraMar || item.campoDeFutebol || item.carpeteDeMadeira || item.cobertura || item.dormitorioDeEmpregada || item.pets || item.pisoArdosia || item.pisoCeramico || item.pisoCimentoQueimado || item.pisoDeGranito || item.pisoDeMarmore || item.pisoLaminado || item.pisoVinilico || item.portaoEletronico || item.quadraPoliesportiva || item.tacoDeMadeira || item.vestiario ? "Características" : ""}</h1>
                     <h2 className='text-md text-white capitalize'>
                       {`
                         ${item.mobiliado ? "mobiliado," : ""} 

@@ -18,7 +18,7 @@ export function Gallery({ children }: { children: React.ReactNode }) {
       <SheetContent side="bottom" className="w-full h-screen">
         <SheetHeader>
           <SheetTitle>Álbum de Fotos</SheetTitle>
-          <div className="grid grid-cols-5 overflow-y-scroll gap-3 w-full h-screen pb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-5 overflow-y-scroll gap-3 w-full h-screen pb-24">
             {children}
           </div>
         </SheetHeader>
