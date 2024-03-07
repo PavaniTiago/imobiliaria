@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "./card";
 import { UseImoveis } from "@/hooks/useImoveis";
 import { useQuery } from "@tanstack/react-query";
 import { FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export function Footer(){
 
@@ -36,7 +37,7 @@ export function Footer(){
                 <ArrowRightIcon width={20} height={20}/>
               </CardFooter>
             </Card>
-            <span className="uppercase text-md font-semibold text-secondary mt-8 mb-12">creci: 222222</span>
+            <span className="uppercase text-md font-semibold text-secondary mt-8 mb-12">creci: 244300</span>
             <div className="hidden lg:block w-full">
                 <div className="w-full flex items-center justify-center flex-col">
                     <div className="w-full max-w-4xl flex flex-col justify-between items-start font-semibold text-start text-white">
@@ -73,8 +74,8 @@ export function Footer(){
                 <div className="w-full flex items-center justify-center flex-col">
                     <h2 className="text-white text-md font-medium">Acompanhe-nos</h2>
                     <div className="space-x-3 py-4">
-                        <button className="bg-transparent text-white rounded-full border p-2"><InstagramLogo size={20}/></button>
-                        <button className="bg-transparent text-white rounded-full border p-2"><FacebookLogo size={20}/></button>
+                        <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border p-2"><InstagramLogo size={20}/></Button></Link>
+                        {/* <Link href="" className="bg-transparent text-white rounded-full border p-2"><FacebookLogo size={20}/></Link> */}
                     </div>
                 </div>
             </div>

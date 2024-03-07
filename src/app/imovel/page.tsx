@@ -1,7 +1,7 @@
 "use client"
 
 import { UseImovelById } from '@/hooks/useImovelById'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useSearchParams } from "next/navigation"
 import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
@@ -28,6 +28,7 @@ function page() {
     <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary pt-28'>
       <WhattsApButton />
       <div className='flex flex-col items-start justify-start w-full px-10 lg:px-[14rem] 2xl:px-[22rem] h-full'>
+        <Suspense>
           {isLoading ?  <div className='flex h-screen pb-28 w-full items-center justify-center'><Loading /></div> : data?.map((item, idx) => (
             <>
               <h2 className='text-white text-2xl lg:text-3xl font-semibold'>{`${item?.title}-${item?.estadoSigla}`}</h2>
@@ -104,7 +105,7 @@ function page() {
                   <p className='text-md max-w-2xl 2xl:max-w-3xl text-white mt-8 leading-snug mb-6 lg:mb-0'>{item?.description}</p>
                   
                 </div>
-                <PriceCard aluguel={item?.aluguel} precoCondominio={item?.precoCondominio} price={item?.price}/>
+                <PriceCard cep={item?.cep.toString()} aluguel={item?.aluguel} precoCondominio={item?.precoCondominio} price={item?.price}/>
               </div>
             </>
           ))}
@@ -151,6 +152,7 @@ function page() {
             </div>
             ))}
             </div>
+        </Suspense>
       </div>
     </div> 
   )

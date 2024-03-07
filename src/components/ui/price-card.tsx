@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { Button } from "./button";
 
 interface PriceCardProps {
     aluguel: string | number | null;
     price: string | number | null;
     precoCondominio: string | number | null;
+    cep: string;
 }
 
 export function PriceCard(props: PriceCardProps){
@@ -17,9 +19,9 @@ export function PriceCard(props: PriceCardProps){
                 <h2 className="text-neutral-600 text-sm font-medium">Condomínio</h2>
                 <span className="text-neutral-600 text-sm font-medium">R${props.precoCondominio}</span>
             </div>
-            <Button size="lg" className="w-full mt-6">Quero visitar</Button>
-            <Button size="lg" className="w-full">Fazer uma proposta</Button>
-            <Button size="lg" className="w-full" variant="outline">Quero mais informações</Button>
+            <Button size="lg" className="w-full mt-6 hover:bg-blue-700 transition-colors"><Link target="_blank" href={`https://www.google.com.br/maps/place/${props.cep}`}>Quero visitar</Link></Button>
+            <Button size="lg" className="w-full hover:bg-blue-700 transition-colors"><Link target="_blank" href="https://wa.link/2ul0du">Fazer uma proposta</Link></Button>
+            <Button size="lg" className="w-full hover:bg-neutral-200 transition-colors" variant="outline"><Link target="_blank" href="https://wa.link/2ul0du">Quero mais informações</Link></Button>
         </div>
     )
 }

@@ -6,14 +6,15 @@ import { ImovelCard } from "@/components/ui/imovel-card";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { WhattsApButton } from "@/components/ui/whattsap-button";
 import { SearchForm } from "@/components/ui/serch-form";
+import Link from "next/link";
 
 export default function Home() {
 
   return (
     <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary'>
       <WhattsApButton />
-      <div className="flex items-center justify-center w-full">
-        <div className="w-full h-screen relative">
+      <div className="flex relative items-center justify-center w-full">
+        <div className="w-full h-screen">
           <Image src="https://i.ibb.co/f4ZN9Q0/L-966f121b838c4c37ab11430267ed6020.jpg" 
           className="brightness-75 object-cover" alt="banner image" width={0} height={0} sizes="100vw" fill priority/>
         </div>
@@ -33,7 +34,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-center text-secondary">Sua família merece o melhor</h2>
           <div className="w-full flex justify-center gap-4 py-6">
             <Button variant="secondary" className="bg-transparent text-white outline outline-2 rounded-3xl hover:text-neutral-300">Destaques</Button>
-            <Button variant="ghost" className="text-white hover:text-neutral-300">Veja Mais</Button>
+            <Button variant="ghost" className="text-white cursor-pointer hover:text-neutral-300"><Link href="/imoveis">Veja Mais</Link></Button>
           </div>
           <div className="flex items-center justify-center w-full pt-6">
             <div className="grid grid-cols-4 gap-4 max-w-6xl">
