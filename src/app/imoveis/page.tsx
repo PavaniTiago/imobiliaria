@@ -62,7 +62,7 @@ export default function Imovel() {
              : 
             <>
                 <div className="flex lg:px-0 px-10 flex-col lg:flex-row justify-between items-start w-full max-w-6xl pb-6 lg:pb-0">
-                    <h2 className="text-2xl font-semibold text-start text-white pb-3 lg:pb-8">{data ? "Imóveis à venda" + data?.length : "Nenhum imóvel encontrado"}</h2>
+                    <h2 className="text-2xl font-semibold text-start text-white pb-3 lg:pb-8">{data?.length ? "Imóveis à venda " + data?.length : "Nenhum imóvel encontrado"}</h2>
                     <FiltersButtons imovelType={imovelType} mobiliado={mobiliado} name={name} price={price} rooms={rooms} suites={suites} sendToFather={queryStringProps} />
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 max-w-6xl pb-16">

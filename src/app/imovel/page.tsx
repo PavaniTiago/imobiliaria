@@ -104,7 +104,7 @@ function page() {
                   <p className='text-md max-w-2xl 2xl:max-w-3xl text-white mt-8 leading-snug mb-6 lg:mb-0'>{item?.description}</p>
                   
                 </div>
-                <PriceCard aluguel={item?.aluguel} precoCondominio={item?.precoCondominio} price={item?.price}/>
+                <PriceCard cep={item?.cep.toString()} aluguel={item?.aluguel} precoCondominio={item?.precoCondominio} price={item?.price}/>
               </div>
             </>
           ))}
