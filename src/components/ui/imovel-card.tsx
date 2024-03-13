@@ -3,7 +3,7 @@
 import { UseImoveis } from "@/hooks/useImoveis"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { capitalizeFirstLetter } from "@/lib/utils"
+import { capitalizeFirstLetter, pegarPrimeiraPalavraComCondominio } from "@/lib/utils"
 import Link from "next/link"
 import { useQuery } from "@tanstack/react-query"
 
@@ -27,8 +27,8 @@ export function ImovelCard(){
                     }}>
                         <CardContent className="flex aspect-square items-center justify-center w-full">
                             <Image src={imovel.imageUrl[1]} alt="imagem de imóvel" className="h-full w-full object-cover rounded-lg relative" width={0} height={0} sizes="100vw" />
-                            <div className="flex flex-col py-6 w-full px-4 bg-neutral-50/70 rounded-b-lg bottom-0 text-secondary gap-3 absolute">
-                                    <h2 className="text-sm text-secondary-foreground font-semibold leading-tight">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
+                            <div className="flex items-center justify-start py-2 w-full px-4 bg-neutral-50/70 rounded-b-lg bottom-0 h-20 text-secondary gap-3 absolute">
+                                    <h2 className="text-sm text-secondary-foreground font-bold leading-tight first-letter:uppercase">{pegarPrimeiraPalavraComCondominio(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
                             </div>
                         </CardContent>
                     </Link>

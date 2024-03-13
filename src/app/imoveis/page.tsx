@@ -84,7 +84,7 @@ export default function Imovel() {
                                         </Carousel>
                                         <div className="flex flex-col py-6 w-full h-full px-4 bg-neutral-50/70 rounded-b-lg bottom-0 text-secondary" onClick={() => router.push(`/imovel?id=${imovel.id}`)}>
                                                 <span className="text-sm text-secondary-foreground leading-tight mb-2 capitalize">{imovel.apartamento ? "apartamento" : "" || imovel.casa ? "casa" : "" || imovel.terreno ? "terreno" : ""}</span>
-                                                <h2 className="text-sm text-secondary-foreground font-semibold leading-tight">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
+                                                <h2 className="text-sm text-secondary-foreground font-semibold leading-tight first-letter:uppercase">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
                                                 <span className="text-sm leading-tight text-secondary-foreground mt-1">cep: {imovel.cep}</span>
                                                 <span className="text-sm text-secondary-foreground leading-tight mt-2">{imovel?.m2} m<span className='align-super text-xs'>2</span> &#x2022; {imovel?.rooms} Quartos{" "} &#x2022; {imovel?.suites} Suites{" "} &#x2022;{imovel.bathrooms} Banheiros{" "} &#x2022; {imovel.vagas} Vagas</span>
                                                 <span className="text-sm font-semibold text-secondary-foreground mt-2">Venda</span>

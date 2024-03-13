@@ -31,7 +31,7 @@ function page() {
         <Suspense>
           {isLoading ?  <div className='flex h-screen pb-28 w-full items-center justify-center'><Loading /></div> : data?.map((item, idx) => (
             <>
-              <h2 className='text-white text-2xl lg:text-3xl font-semibold'>{`${item?.title}-${item?.estadoSigla}`}</h2>
+              <h2 className='text-white text-2xl lg:text-3xl font-semibold first-letter:uppercase'>{`${item?.title}-${item?.estadoSigla}`}</h2>
               <Card className='w-full rounded-lg mt-8 bg-transparent overflow-hidden relative'>
                 <CardContent className='grid lg:grid-flow-col grid-rows-2 w-full h-full gap-2'>
                   {item?.imageUrl.map((image, idx) => ((

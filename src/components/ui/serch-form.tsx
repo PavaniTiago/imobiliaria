@@ -46,7 +46,7 @@ export function SearchForm(){
     }    
 
     return (
-        <div className="flex flex-col lg:flex-row items-center relative w-full lg:w-fit p-6 lg:p-3 lg:bg-primary shadow-lg rounded-xl gap-6">
+        <div className="flex flex-col lg:flex-row items-center relative w-full lg:w-fit p-6 lg:p-3 lg:bg-primary shadow-lg rounded-md gap-6">
             <SelectGroupRadio sendToFather={imovelTypesProps} title="Tipo Imóvel" icon={<HomeIcon />}/>
             <InputSearch value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite a cidade desejada"/>
             <Button className="relative rounded-2xl hidden lg:block w-[220px] gap-1 border" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Menos" : "Mais"} Filtros <DragHandleDots2Icon className="absolute bottom-1.5 left-2" width={20} height={20}/></Button>

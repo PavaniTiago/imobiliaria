@@ -31,7 +31,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full hidden lg:block">
-          <h2 className="text-2xl font-semibold text-center text-secondary">Sua família merece o melhor</h2>
+          <h2 className="text-2xl font-semibold text-center text-secondary uppercase">Realize o sonho da casa própria</h2>
           <div className="w-full flex justify-center gap-4 py-6">
             <Button variant="secondary" className="bg-transparent text-white outline outline-2 rounded-3xl hover:text-neutral-300">Destaques</Button>
             <Button variant="ghost" className="text-white cursor-pointer hover:text-neutral-300"><Link href="/imoveis">Veja Mais</Link></Button>

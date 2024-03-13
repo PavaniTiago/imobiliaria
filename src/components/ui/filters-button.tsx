@@ -70,7 +70,7 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                     </div>
                     <div className="flex flex-wrap items-center gap-2 justify-between">
                         <Label className="lg:text-lg font-medium">Banheiros</Label>
-                        <div className="space-x-2">
+                        <div className="flex flex-wrap gap-2">
                             <Button className="w-12 h-8" value="1" onClick={() => setBathrooms("1")}>1+</Button>
                             <Button className="w-12 h-8" value="2" onClick={() => setBathrooms("2")}>2+</Button>
                             <Button className="w-12 h-8" value="3" onClick={() => setBathrooms("3")}>3+</Button>
@@ -80,7 +80,7 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                     </div>
                     <div className="flex flex-wrap items-center gap-2 justify-between">
                         <Label className="lg:text-lg font-medium">Vagas</Label>
-                        <div className="space-x-2">
+                        <div className="flex flex-wrap gap-2">
                             <Button className="w-12 h-8" value="1" onClick={() => setVagas("1")}>1+</Button>
                             <Button className="w-12 h-8" value="2" onClick={() => setVagas("2")}>2+</Button>
                             <Button className="w-12 h-8" value="3" onClick={() => setVagas("3")}>3+</Button>
@@ -118,9 +118,9 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                                         <Label htmlFor="r7">Área de serviço</Label>
                                 </RadioGroup>
                             </div>
-                            <button className="flex gap-1 my-4 items-center justify-start text-sm font-medium text-neutral-800" onClick={() => setIsVisible(!isVisible)}>Ver mais <ArrowDown size={18}/></button>
+                            <button className="flex my-2 gap-1 items-center justify-start text-sm font-medium text-neutral-800" onClick={() => setIsVisible(!isVisible)}>Ver mais <ArrowDown size={18}/></button>
                             {isVisible && 
-                                <div className="grid grid-flow-row grid-cols-2 w-full place-content-center gap-3">    
+                                <div className="grid h-full pt-4 max-h-64 overflow-y-auto grid-flow-row grid-cols-2 w-full place-content-center gap-3">    
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="banheiroDeEmpregada" id="r8" />
                                         <Label htmlFor="r8">Banheiro de empregada</Label>
