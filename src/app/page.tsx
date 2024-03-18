@@ -8,16 +8,19 @@ import { WhattsApButton } from "@/components/ui/whattsap-button";
 import { SearchForm } from "@/components/ui/serch-form";
 import Link from "next/link";
 
+import Carlos from "../../public/carlos.png";
+
 export default function Home() {
 
   return (
     <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary'>
       <WhattsApButton />
-      <div className="flex relative items-center justify-center w-full">
+      <div className="flex relative items-center justify-center w-full h-full">
         <div className="w-full h-screen">
           <Image src="https://i.ibb.co/f4ZN9Q0/L-966f121b838c4c37ab11430267ed6020.jpg" 
           className="brightness-75 object-cover" alt="banner image" width={0} height={0} sizes="100vw" fill priority/>
-        </div>
+        </div> 
+          <Image src={Carlos} alt="carlos foto" width={0} height={0} className="object-cover h-[50rem] w-[32rem] z-10 lg:block hidden absolute -bottom-[3.3rem] right-0 transform scale-x-[-1]"/>
           <div className="flex flex-col items-center justify-center w-full h-full absolute text-white  gap-6">
             <h1 className="text-3xl text-center lg:text-5xl font-semibold font-montSerrat">Compre ou Alugue Agora</h1>
             <SearchForm />
@@ -47,13 +50,13 @@ export default function Home() {
             <Card className="w-[320px] h-[350px] flex flex-col justify-between">
               <CardHeader className="gap-2">
                 <PersonIcon width={35} height={35} className="text-foreground/70"/>
-                <CardTitle className="text-2xl">Atendimento VIP</CardTitle>
+                <CardTitle className="text-2xl">Atendimento Personalizado</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pb-8 leading-snug">
                 <span>Nos conte como quer o seu imóvel e nós encontraremos para você</span>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="default" size="lg" className="hover:bg-blue-700 transition">Iniciar</Button>
+                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://www.instagram.com/carlostortorella/"></Link>Iniciar</Button>
                 <ArrowRightIcon width={20} height={20}/>
               </CardFooter>
             </Card>
@@ -66,7 +69,7 @@ export default function Home() {
                 <span>Deixe seus dados que cuidaremos do seu imóvel.</span>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="default" size="lg" className="hover:bg-blue-700 transition">Iniciar</Button>
+                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://www.instagram.com/carlostortorella/"></Link>Iniciar</Button>
                 <ArrowRightIcon width={20} height={20}/>
               </CardFooter>
             </Card>

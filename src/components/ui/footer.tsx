@@ -1,12 +1,14 @@
 "use client"
 
-import { Share2Icon, ArrowRightIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Button } from "./button";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "./card";
+import { Card, CardHeader, CardContent, CardFooter } from "./card";
 import { UseImoveis } from "@/hooks/useImoveis";
 import { useQuery } from "@tanstack/react-query";
-import { FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
+import { InstagramLogo } from "@phosphor-icons/react";
 import Link from "next/link";
+import Logo from "../../../public/logo.png"
+import Image from "next/image";
 
 export function Footer(){
 
@@ -24,13 +26,15 @@ export function Footer(){
 
     return (
         <footer className="flex flex-col items-center justify-end w-full h-full bg-primary">
-            <Card className="max-w-xs gap-12 flex flex-col justify-between mt-8 mx-6">
-              <CardHeader className="gap-2">
-                <Share2Icon width={35} height={35} className="text-foreground/70"/>
-                <CardTitle className="text-2xl">Administração de imóveis</CardTitle>
+            <Card className="w-[300px] h-[360px] flex flex-col justify-between">
+              <CardHeader className="flex items-center justify-center gap-2 relative">
+                <Image alt="logo imobiliaria" src={Logo} width={0} height={0} className="object-cover h-40 w-40" />
+                <span className="text-sm font-semibold absolute bottom-8">CRECI:244300</span>
               </CardHeader>
-              <CardContent className="px-6 pb-8 leading-snug">
-                <span>Deixe seus dados que cuidaremos do seu imóvel.</span>
+              <CardContent className="flex flex-col px-6 pb-8 leading-snug">
+                <span className="text-md font-semibold">Carlos Tortorella</span>
+                <span className="text-sm">Vinhedo SP</span>
+                <span className="text-sm">(19) 99901-6424</span>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Button variant="default" size="lg" className="hover:bg-blue-700 transition">Iniciar</Button>
@@ -49,25 +53,22 @@ export function Footer(){
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex items-center justify-center bg-secondary py-16 mt-12">
-                    <div className="w-full max-w-4xl flex justify-between text-primary">    
-                        <div>
-                            <h3 className="text-lg text-black font-semibold">Institucional</h3>
-                            <span className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Política de privacide</span>
-                        </div>
+                <div className="w-full flex flex-col items-center justify-center bg-secondary pt-16 pb-4 mt-12">
+                    <div className="w-full max-w-3xl flex justify-between text-primary">    
                         <div>
                             <h3 className="text-lg text-black font-semibold">Imóveis</h3>
-                            <span className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Cadastre seu imóvel</span>
+                            <Link href="https://www.instagram.com/carlostortorella/" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Cadastre seu imóvel</Link>
                         </div>
                         <div>
                             <h3 className="text-lg text-black font-semibold">Serviços</h3>
-                            <span className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Financiamento e bancos</span>
+                            <Link href="/bancos" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Financiamento e bancos</Link>
                         </div>
                         <div>
                             <h3 className="text-lg text-black font-semibold">Contatos</h3>
-                            <span className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Fale conosco</span>
+                            <Link href="https://www.instagram.com/carlostortorella/" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Fale conosco</Link>
                         </div>
                     </div>
+                    <p className="text-sm mt-6">© Carlos Tortorella. Todos os direitos reservados</p>
                 </div>
             </div>
             <div className="w-full block lg:hidden">
@@ -77,6 +78,7 @@ export function Footer(){
                         <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border p-2"><InstagramLogo size={20}/></Button></Link>
                         {/* <Link href="" className="bg-transparent text-white rounded-full border p-2"><FacebookLogo size={20}/></Link> */}
                     </div>
+                    <p className="text-sm">Todos os direitos reservados</p>
                 </div>
             </div>
         </footer>

@@ -25,7 +25,7 @@ function page() {
     })
 
   return (
-    <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary pt-28'>
+    <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary pt-28 lg:pt-[18rem]'>
       <WhattsApButton />
       <div className='flex flex-col items-start justify-start w-full px-10 lg:px-[14rem] 2xl:px-[22rem] h-full'>
         <Suspense>

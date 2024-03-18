@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Bancos(){
     return (
-        <main className="flex items-center justify-center h-full w-full bg-primary pt-40">
+        <main className="flex items-center justify-center h-full w-full bg-primary pt-32 lg:pt-[20rem] pb-12">
             <div className="flex flex-col items-center justify-center max-w-5xl w-full px-8">
                 <h2 className="text-white text-2xl lg:text-3xl mb-4">Financiamento e bancos</h2>
                 <div className="flex flex-col gap-6 p-4 lg:p-12 w-full max-w-4xl bg-white">

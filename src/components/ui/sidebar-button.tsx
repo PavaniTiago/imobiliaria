@@ -16,14 +16,12 @@ export function SideBarButton(){
       <SheetTrigger><HamburgerMenuIcon className="text-blue-700" width={30} height={30}/></SheetTrigger>
       <SheetContent className="h-full p-0 border-0">
         <SheetHeader className="lg:ml-4 mt-6 lg:pl-6 pt-6 space-y-0">
-          <SheetTitle className="text-lg text-foreground/60">Institucional</SheetTitle>
-          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Política de privacidade</SheetDescription>
           <SheetTitle className="text-lg text-foreground/60 pt-3">Imóveis</SheetTitle>
-          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Encomende seu imóvel</SheetDescription>
+          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer"><Link href="https://wa.link/2ul0du"></Link>Encomende seu imóvel</SheetDescription>
           <SheetTitle className="text-lg text-foreground/60 pt-3">Serviços</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer"><Link href="/bancos">Financiamento de bancos</Link></SheetDescription>
           <SheetTitle className="text-lg text-foreground/60 pt-3">Contato</SheetTitle>
-          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer">Fale conosco</SheetDescription>
+          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer"><Link href="https://wa.link/2ul0du">Fale conosco</Link></SheetDescription>
         </SheetHeader>
         <SheetFooter className="absolute flex justify-start bottom-0 p-8 w-full bg-primary">
           <div className="flex flex-col justify-end items-start text-white">

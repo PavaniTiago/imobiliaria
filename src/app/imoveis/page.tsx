@@ -53,7 +53,7 @@ export default function Imovel() {
 
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full h-full bg-primary pt-32">
+        <div className="relative flex flex-col items-center justify-center w-full h-full bg-primary pt-32 lg:pt-[18rem]">
             <WhattsApButton />
             <Suspense>
                 

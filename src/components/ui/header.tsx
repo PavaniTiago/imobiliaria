@@ -6,9 +6,9 @@ import Link from "next/link"
 
 export function Header(){
     return (    
-    <header className="flex absolute z-10 bg-secondary text-white h-24 overflow-hidden justify-around items-center w-full px-4 lg:px-12">
+    <header className="flex absolute z-10 bg-secondary text-white h-20 lg:h-56 overflow-hidden justify-around items-center w-full px-4 lg:px-12">
         <Link href="/">
-            <Image alt="logo" src={logo} width={0} height={0} className="w-40 h-40 object-cover"></Image> 
+            <Image alt="logo" src={logo} width={0} height={0} className="w-32 h-32 lg:w-96 lg:h-96 object-cover"></Image> 
         </Link>
         <div className="flex items-center justify-center gap-12">
             <div className="flex items-center justify-center gap-4">
