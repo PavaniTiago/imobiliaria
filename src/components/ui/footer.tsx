@@ -37,7 +37,7 @@ export function Footer(){
                 <span className="text-sm">(19) 99901-6424</span>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="default" size="lg" className="hover:bg-blue-700 transition">Iniciar</Button>
+                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://wa.link/2ul0du">Iniciar</Link></Button>
                 <ArrowRightIcon width={20} height={20}/>
               </CardFooter>
             </Card>
@@ -48,7 +48,7 @@ export function Footer(){
                     <h2 className="text-3xl">Imóveis por região</h2>
                         <div className="flex justify-between w-full mt-6">
                         {filteredArray?.map((name, idx) => (
-                            <span className="text-md hover:text-white/80 transition cursor-pointer" key={idx}>{name}</span>
+                            <Link href={`/imoveis?name=${name}`} className="text-md hover:text-white/80 transition cursor-pointer" key={idx}>{name}</Link>
                         ))}
                         </div>
                     </div>

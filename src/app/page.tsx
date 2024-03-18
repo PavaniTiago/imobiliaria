@@ -56,7 +56,7 @@ export default function Home() {
                 <span>Nos conte como quer o seu imóvel e nós encontraremos para você</span>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://www.instagram.com/carlostortorella/"></Link>Iniciar</Button>
+                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://www.instagram.com/carlostortorella/">Iniciar</Link></Button>
                 <ArrowRightIcon width={20} height={20}/>
               </CardFooter>
             </Card>
@@ -69,7 +69,7 @@ export default function Home() {
                 <span>Deixe seus dados que cuidaremos do seu imóvel.</span>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://www.instagram.com/carlostortorella/"></Link>Iniciar</Button>
+                <Button variant="default" size="lg" className="hover:bg-blue-700 transition"><Link href="https://www.instagram.com/carlostortorella/">Iniciar</Link></Button>
                 <ArrowRightIcon width={20} height={20}/>
               </CardFooter>
             </Card>
