@@ -49,7 +49,7 @@ export function SearchForm(){
         <div className="flex flex-col lg:flex-row items-center relative w-full lg:w-fit p-6 lg:p-3 lg:bg-primary shadow-lg rounded-md gap-6">
             <SelectGroupRadio sendToFather={imovelTypesProps} title="Tipo Imóvel" icon={<HomeIcon />}/>
             <InputSearch value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite a cidade desejada"/>
-            <Button className="relative rounded-2xl hidden lg:block w-[220px] gap-1 border" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Menos" : "Mais"} Filtros <DragHandleDots2Icon className="absolute bottom-1.5 left-2" width={20} height={20}/></Button>
+            <Button className="relative rounded-2xl hidden lg:block w-[190px] gap-1 border" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Menos" : "Mais"} Filtros <DragHandleDots2Icon className="absolute bottom-1.5 left-2" width={20} height={20}/></Button>
             {isOpen && (    
                 <div className="flex absolute h-full bg-primary -bottom-[72px] p-3 w-full justify-between items-center left-0 rounded-b-lg">
                     <Search sendToFather={priceProps} title="Preço de venda">
@@ -78,7 +78,7 @@ export function SearchForm(){
                     </Search>
                 </div>
             )}
-            <Button variant="secondary" className="hover:bg-neutral-200 w-full lg:w-52 transition py-7" onClick={SetSearch}>Encontrar Imóvel</Button>
+            <Button variant="secondary" className="hover:bg-neutral-200 w-full lg:w-40 transition py-7" onClick={SetSearch}>Encontrar Imóvel</Button>
         </div>
     )
 }

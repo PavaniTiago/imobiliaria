@@ -27,7 +27,7 @@ function page() {
   return (
     <div className='relative flex flex-col items-center justify-center w-full h-full bg-primary pt-28 lg:pt-[18rem]'>
       <WhattsApButton />
-      <div className='flex flex-col items-start justify-start w-full px-10 lg:px-[14rem] 2xl:px-[22rem] h-full'>
+      <div className='flex flex-col items-start justify-start w-full px-10 lg:px-[10rem] 2xl:px-[22rem] h-full'>
         <Suspense>
           {isLoading ?  <div className='flex h-screen pb-28 w-full items-center justify-center'><Loading /></div> : data?.map((item, idx) => (
             <>
@@ -46,7 +46,7 @@ function page() {
               </Card>
               <div className='flex flex-col lg:flex-row items-center justify-between w-full mt-2 lg:mt-16'>
                 <div className='max-w-xl 2xl:max-w-2xl'>
-                  <h2 className='text-white text-xl lg:text-2xl 2xl:text-3xl font-medium mt-8 max-w-2xl 2xl:max-w-3xl'>
+                  <h2 className='text-white text-xl lg:text-2xl 2xl:text-3xl font-medium mt-8 max-w-xl 2xl:max-w-3xl'>
                     {`Sobre a 
                       ${item.terreno ? "terreno" : ""} 
                       ${item.casa ? "casa" : ""} 
@@ -60,9 +60,9 @@ function page() {
                       em {item?.cidade}-{item?.estadoSigla}
                   </h2>
 
-                  <Separator className='max-w-2xl 2xl:max-w-3xl bg-neutral-300/90 mt-4'/>
+                  <Separator className='max-w-xl 2xl:max-w-3xl bg-neutral-300/90 mt-4'/>
 
-                  <div className='flex gap-4 lg:gap-8 items-center justify-start max-w-2xl 2xl:max-w-3xl mt-4'>
+                  <div className='flex gap-4 lg:gap-8 items-center justify-start max-w-xl 2xl:max-w-3xl mt-4'>
                     <div className='flex flex-col lg:flex-row gap-2 items-center justify-center text-neutral-200'>
                         <CornersIcon width={25} height={25} className='text-neutral-300'/>
                         <span className='text-sm'>{item.m2} m<span className='align-super text-xs'>2</span>
@@ -71,7 +71,7 @@ function page() {
                     </div> 
                     {item?.terreno ? "" : 
                       (
-                        <div className='flex items-center flex-wrap justify-start gap-8 max-w-2xl 2xl:max-w-3xl'>
+                        <div className='flex items-center flex-wrap justify-start gap-8 max-w-xl 2xl:max-w-3xl'>
                           <div className='flex flex-col items-start justify-start text-neutral-200'>
                             <Bed size={20} className='text-neutral-300'/>
                             <span className='text-sm'>{item?.rooms} {item?.rooms > 1 ? "Quartos" : "Quarto"}</span>
@@ -102,16 +102,16 @@ function page() {
                       )
                     }
                   </div>
-                  <p className='text-md max-w-2xl 2xl:max-w-3xl text-white mt-8 leading-snug mb-6 lg:mb-0'>{item?.description}</p>
+                  <p className='text-md max-w-xl 2xl:max-w-3xl text-white mt-8 leading-snug mb-6 lg:mb-0'>{item?.description}</p>
                   
                 </div>
                 <PriceCard cep={item?.cep.toString()} aluguel={item?.aluguel} precoCondominio={item?.precoCondominio} price={item?.price}/>
               </div>
             </>
           ))}
-              <div className='max-w-2xl 2xl:max-w-3xl mt-12'>
+              <div className='max-w-xl 2xl:max-w-3xl mt-12'>
             {data?.map((item, index) => (
-              <div className="flex flex-col items-start gap-3 max-w-2xl 2xl:max-w-3xl justify-center"> 
+              <div className="flex flex-col items-start gap-3 max-w-xl 2xl:max-w-3xl justify-center"> 
               <h1 className='text-xl font-semibold text-white'>{item.mobiliado || item.aceitaFinanciamento || item.aceitaPermuta || item.apartamentoGarden || item.aquecimentoSolar || item.areaDeServico || item.armarioBanheiro || item.armarioCloset || item.armarioCozinha || item.armarioDormitorioDeEmpregada || item.armarioEscritorio || item.armarioHomeTheater || item.armarioQuarto || item.armarioSala || item.banheiroDeEmpregada || item.beiraMar || item.campoDeFutebol || item.carpeteDeMadeira || item.cobertura || item.dormitorioDeEmpregada || item.pets || item.pisoArdosia || item.pisoCeramico || item.pisoCimentoQueimado || item.pisoDeGranito || item.pisoDeMarmore || item.pisoLaminado || item.pisoVinilico || item.portaoEletronico || item.quadraPoliesportiva || item.tacoDeMadeira || item.vestiario ? "Características" : ""}</h1>
                     <h2 className='text-md text-white capitalize'>
                       {`

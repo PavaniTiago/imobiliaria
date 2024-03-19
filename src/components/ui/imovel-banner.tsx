@@ -13,6 +13,7 @@ import {
 import { capitalizeFirstLetter } from "@/lib/utils"
 import Link from "next/link"
 import { useQuery } from "@tanstack/react-query"
+import AutoPlay from "embla-carousel-autoplay"
 
 export function ImovelBanner(){
 
@@ -24,7 +25,13 @@ export function ImovelBanner(){
 
     return (
         <div>
-            <Carousel className="flex items-center justify-center w-[64rem] h-[38rem]">
+            <Carousel className="flex items-center justify-center w-[64rem] h-[38rem]" 
+            plugins={[
+                AutoPlay({
+                    delay: 3000,
+                })
+            ]}
+            >
                     <CarouselContent>
                         {data?.map((imovel, idx) => (
                         <CarouselItem key={idx}>

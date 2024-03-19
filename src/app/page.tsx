@@ -20,7 +20,7 @@ export default function Home() {
           <Image src="https://i.ibb.co/f4ZN9Q0/L-966f121b838c4c37ab11430267ed6020.jpg" 
           className="brightness-75 object-cover" alt="banner image" width={0} height={0} sizes="100vw" fill priority/>
         </div> 
-          <Image src={Carlos} alt="carlos foto" width={0} height={0} className="object-cover h-[50rem] w-[32rem] z-10 lg:block hidden absolute -bottom-[3.3rem] right-0 transform scale-x-[-1]"/>
+          <Image src={Carlos} alt="carlos foto" width={0} height={0} className="object-cover lg:h-[29rem] lg:w-[16.5rem] 2xl:h-[50rem] 2xl:w-[32rem] lg:block hidden absolute -bottom-[3.3rem] right-0 transform scale-x-[-1]"/>
           <div className="flex flex-col items-center justify-center w-full h-full absolute text-white  gap-6">
             <h1 className="text-3xl text-center lg:text-5xl font-semibold font-montSerrat">Compre ou Alugue Agora</h1>
             <SearchForm />

@@ -19,7 +19,7 @@ import React from "react";
 export const Search = ({ title, icon, children, sendToFather }: searchProps) => {
     return (
             <Select onValueChange={(value) => sendToFather(value)}>
-                <SelectTrigger className="w-[220px] py-6 gap-2">
+                <SelectTrigger className="w-[200px] py-6 gap-2">
                     {icon}
                     <SelectValue placeholder={title} />
                 </SelectTrigger>
