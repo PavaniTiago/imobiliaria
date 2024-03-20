@@ -25,7 +25,7 @@ export function ImovelBanner(){
 
     return (
         <div>
-            <Carousel className="flex items-center justify-center w-[64rem] h-[38rem]" 
+            <Carousel className="flex items-center justify-center w-[20rem] lg:w-[64rem] lg:h-[38rem]" 
             plugins={[
                 AutoPlay({
                     delay: 3000,
@@ -41,13 +41,13 @@ export function ImovelBanner(){
                                     id: imovel.id,
                                 }
                             }}>
-                                <Card>
+                                <Card className="relative">
                                     <CardContent className="flex aspect-video items-center justify-center w-full">
-                                        <Image key={idx} src={imovel.imageUrl[1]} alt="imagem de imóvel" className="h-full w-full object-cover rounded-lg relative" width={0} height={0} sizes="100vw" quality={100} priority/>
-                                        <div className="flex flex-col py-7 w-[64rem] bg-neutral-900/70 rounded-b-lg bottom-0 text-secondary gap-3 absolute">
-                                            <span className="font-semibold pl-8 text-md">{imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</span>
-                                            <div className="flex w-full justify-between items-center px-8">
-                                                <h2 className="text-2xl max-w-3xl">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
+                                        <Image key={idx} src={imovel.imageUrl[1]} alt="imagem de imóvel" className="h-full w-full object-cover rounded-lg" width={0} height={0} sizes="100vw" quality={100} priority/>
+                                        <div className="flex flex-col py-7 w-full lg:w-[64rem] bg-neutral-900/70 rounded-b-lg bottom-0 text-secondary gap-3 absolute">
+                                            <span className="font-semibold pl-8 text-sm lg:text-md">{imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</span>
+                                            <div className="flex flex-col lg:flex-row w-full justify-between items-center px-8">
+                                                <h2 className="text-sm lg:text-2xl max-w-3xl">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
                                                 <span className="font-semibold">{'R$ ' + imovel.price}</span>
                                             </div>
                                         </div>
@@ -57,8 +57,8 @@ export function ImovelBanner(){
                         </CarouselItem>
                         ))}
                     </CarouselContent>
-                <CarouselPrevious variant="secondary" className="absolute w-10 h-10 hover:bg-neutral-300"/>
-                <CarouselNext variant="secondary" className="absolute w-10 h-10 hover:bg-neutral-300"/>
+                <CarouselPrevious variant="secondary" className="px-3 absolute w-10 h-10 hover:bg-neutral-300 hidden lg:block"/>
+                <CarouselNext variant="secondary" className="px-3 absolute w-10 h-10 hover:bg-neutral-300 hidden lg:block"/>
             </Carousel>
         </div>
     )

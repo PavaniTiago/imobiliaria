@@ -7,7 +7,7 @@ import { UseImoveis } from "@/hooks/useImoveis";
 import { useQuery } from "@tanstack/react-query";
 import { InstagramLogo } from "@phosphor-icons/react";
 import Link from "next/link";
-import Logo from "../../../public/logo.png"
+import Logo from "../../../public/logo2.png"
 import Image from "next/image";
 
 export function Footer(){
@@ -28,8 +28,8 @@ export function Footer(){
         <footer className="flex flex-col items-center justify-end w-full h-full bg-primary">
             <Card className="w-[300px] h-[360px] flex flex-col justify-between">
               <CardHeader className="flex items-center justify-center gap-2 relative">
-                <Image alt="logo imobiliaria" src={Logo} width={0} height={0} className="object-cover h-40 w-40" />
-                <span className="text-sm font-semibold absolute bottom-8">CRECI:244300</span>
+                <Image alt="logo imobiliaria" src={Logo} width={0} height={0} className="object-cover h-32 w-32" />
+                <span className="text-sm font-semibold absolute bottom-0">CRECI:244300</span>
               </CardHeader>
               <CardContent className="flex flex-col px-6 pb-8 leading-snug">
                 <span className="text-md font-semibold">Carlos Tortorella</span>
@@ -48,7 +48,7 @@ export function Footer(){
                     <h2 className="text-3xl">Imóveis por região</h2>
                         <div className="flex justify-between w-full mt-6">
                         {filteredArray?.map((name, idx) => (
-                            <Link href={`/imoveis?name=${name}`} className="text-md hover:text-white/80 transition cursor-pointer" key={idx}>{name}</Link>
+                            <Link href={`/imoveis?name=${name}`} className="text-md hover:text-white/80 transition cursor-pointer uppercase" key={idx}>{name}</Link>
                         ))}
                         </div>
                     </div>
@@ -68,19 +68,16 @@ export function Footer(){
                             <Link href="https://www.instagram.com/carlostortorella/" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Fale conosco</Link>
                         </div>
                     </div>
-                    <p className="text-sm mt-6">© Carlos Tortorella. Todos os direitos reservados</p>
+                    <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
+                    <p className="text-sm my-3">© 2024. Todos os Direitos reservados. gerenciado por JN Comunicação</p>
                 </div>
             </div>
-            <div className="w-full block lg:hidden">
-                <div className="w-full flex items-center justify-center flex-col">
-                    <h2 className="text-white text-md font-medium">Acompanhe-nos</h2>
-                    <div className="space-x-3 py-4">
-                        <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border p-2"><InstagramLogo size={20}/></Button></Link>
-                        {/* <Link href="" className="bg-transparent text-white rounded-full border p-2"><FacebookLogo size={20}/></Link> */}
+                <div className="block lg:hidden bg-secondary">
+                    <div className="flex flex-col items-center justify-center px-8">
+                        <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
+                        <p className="text-sm my-3 text-center">© 2024. Todos os Direitos reservados. gerenciado por JN Comunicação</p>
                     </div>
-                    <p className="text-sm">Todos os direitos reservados</p>
                 </div>
-            </div>
         </footer>
     )
 }
