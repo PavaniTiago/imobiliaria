@@ -51,7 +51,6 @@ export default function Imovel() {
         refetch()
     },[queryString])
 
-
     return (
         <div className="relative flex flex-col items-center justify-center w-full h-full bg-primary pt-32 lg:pt-[18rem]">
             <WhattsApButton />
@@ -69,13 +68,13 @@ export default function Imovel() {
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 max-w-6xl pb-16">
                         {data?.map((imovel, idx) => (
-                            <Card className="w-[20rem] lg:w-full lg:h-full relative cursor-pointer" key={idx}>
+                            <Card className="w-[20rem] lg:w-full lg:h-full relative cursor-pointer overflow-hidden" key={idx}>
                                     <CardContent className="flex flex-col w-full h-full items-center justify-center">
                                         <Carousel className="w-full h-full">
                                             <CarouselContent onClick={() => router.push(`/imovel?id=${imovel.id}`)}>
                                                 {imovel.imageUrl.map((photos, idx) => (
                                                     <CarouselItem className="w-full h-full" key={idx}>
-                                                        <Image src={photos} alt="imagem de imóvel" className="h-full w-full aspect-square object-cover rounded-t-lg" width={0} height={0} sizes="100vw" quality={100}/>
+                                                        <Image src={photos} alt="imagem de imóvel" className="hover:scale-110 transition-all duration-200 ease-in-out h-full w-full aspect-square object-cover rounded-t-lg" width={0} height={0} sizes="100vw" quality={100}/>
                                                     </CarouselItem>
                                                 ))}
                                             </CarouselContent>
@@ -87,7 +86,7 @@ export default function Imovel() {
                                                 <h2 className="text-sm text-secondary-foreground font-semibold leading-tight first-letter:uppercase">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
                                                 <span className="text-sm leading-tight text-secondary-foreground mt-1">cep: {imovel.cep}</span>
                                                 <span className="text-sm text-secondary-foreground leading-tight mt-2">{imovel?.m2} m<span className='align-super text-xs'>2</span> &#x2022; {imovel?.rooms} Quartos{" "} &#x2022; {imovel?.suites} Suites{" "} &#x2022;{imovel.bathrooms} Banheiros{" "} &#x2022; {imovel.vagas} Vagas</span>
-                                                <span className="text-sm font-semibold text-secondary-foreground mt-2">Venda</span>
+                                                <span className="text-sm font-semibold text-secondary-foreground mt-2">{imovel?.loja ? "Locação": "Venda"}</span>
                                                 <span className="text-base font-semibold text-secondary-foreground">R${imovel.price}</span>
                                         </div>
                                     </CardContent>

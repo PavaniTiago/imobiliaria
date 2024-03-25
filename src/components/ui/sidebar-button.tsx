@@ -21,7 +21,7 @@ export function SideBarButton(){
           <SheetTitle className="text-lg text-foreground/60 pt-3">Serviços</SheetTitle>
           <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer"><Link href="/bancos">Financiamento de bancos</Link></SheetDescription>
           <SheetTitle className="text-lg text-foreground/60 pt-3">Contato</SheetTitle>
-          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer"><Link href="https://wa.link/2ul0du">Fale conosco</Link></SheetDescription>
+          <SheetDescription className="text-md text-black font-medium hover:bg-gray-200 transition-colors cursor-pointer"><Link href="/contact">Fale conosco</Link></SheetDescription>
         </SheetHeader>
         <SheetFooter className="absolute flex justify-start bottom-0 p-8 w-full bg-primary">
           <div className="flex flex-col justify-end items-start text-white">

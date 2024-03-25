@@ -9,6 +9,7 @@ import { SearchForm } from "@/components/ui/serch-form";
 import Link from "next/link";
 
 import Carlos from "../../public/carlos.png";
+import { DoubleCard } from "@/components/ui/doubleCard";
 
 export default function Home() {
 
@@ -30,17 +31,18 @@ export default function Home() {
       </div>
         <div className="h-full w-full py-12 hidden lg:block">
           <div className="flex justify-center items-center">
-            <ImovelBanner />
+            {/* <ImovelBanner /> */}
+            <DoubleCard />
           </div>
         </div>
-        <div className="w-full hidden lg:block">
-          <h2 className="text-2xl font-semibold text-center text-secondary uppercase">Realize o sonho da casa própria</h2>
+        <div className="w-full mt-12 lg:mt-0">
+          <h2 className="text-xl px-6 lg:text-2xl font-semibold text-center text-secondary uppercase">Realize o sonho da casa própria</h2>
           <div className="w-full flex justify-center gap-4 py-6">
             <Button variant="secondary" className="bg-transparent text-white outline outline-2 rounded-3xl hover:text-neutral-300">Destaques</Button>
             <Button variant="ghost" className="text-white cursor-pointer hover:text-neutral-300"><Link href="/imoveis">Veja Mais</Link></Button>
           </div>
           <div className="flex items-center justify-center w-full pt-6">
-            <div className="grid grid-cols-4 gap-4 max-w-6xl">
+            <div className="grid lg:grid-cols-4 gap-4 max-w-6xl">
               <ImovelCard />
             </div>
           </div>

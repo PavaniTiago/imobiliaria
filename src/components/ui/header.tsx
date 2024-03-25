@@ -19,19 +19,17 @@ export function Header(){
         <div className="flex items-center justify-center gap-12">
             <div className="text-black hidden lg:block">
                 <div className="flex items-center justify-center gap-3 text-md font-medium">    
-                    <Link href="/imoveis" className="hover:underline">Venda</Link>
-                    <Link href="/imoveis?imovelType=loja" className="hover:underline">Locação</Link>
+                    <Link href="/imoveis" className="hover:underline">Imóveis</Link>
+                    <Link href="/bancos" className="hover:underline">Financiamentos</Link>
                     <Accordion type="single" collapsible className="w-32 text-black">
                         <AccordionItem value="item-1">
                             <AccordionTrigger>Informações</AccordionTrigger>
                             <AccordionContent className="flex flex-col gap-2">
                                 <Link href="/sobre" className="hover:underline">Quem sou Eu</Link>
-                                <Separator />
-                                <Link href="/bancos" className="hover:underline">Financiamentos</Link>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                    <Link href="/contato" className="hover:underline">Contato</Link>
+                    <Link href="/contact" className="hover:underline">Contato</Link>
                 </div>
             </div>
             <div className="block lg:hidden">
