@@ -12,7 +12,7 @@ import { Separator } from "./separator"
 
 export function Header(){
     return (    
-    <header className="flex absolute z-10 bg-secondary text-white h-20 lg:h-36 overflow-hidden justify-around items-center w-full px-4">
+    <header className="flex absolute z-10 bg-secondary text-white h-20 lg:h-32 overflow-hidden justify-around items-center w-full px-4">
         <Link href="/">
             <Image alt="logo" src={logo} width={0} height={0} className="w-48 h-32 lg:w-96 lg:h-52 object-cover"></Image> 
         </Link>

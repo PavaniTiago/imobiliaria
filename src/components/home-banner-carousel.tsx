@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import AutoPlay from "embla-carousel-autoplay"
 import image1 from "../../public/image1.webp"
-import image2 from "../../public/image2.webp"
-import image3 from "../../public/image3.webp"
+import image2 from "../../public/image2.jpg"
+import image3 from "../../public/image3.jpg"
 
 export default function HomeBannerCarousel(){
     return (
@@ -32,7 +32,7 @@ export default function HomeBannerCarousel(){
                 </CarouselItem>
                 <CarouselItem>
                     <Image src={image3} 
-                    className="brightness-75 object-cover w-full h-screen" alt="banner image" width={0} height={0} sizes="100vw" priority/>
+                    className="brightness-75 object-cover object-top w-full h-screen" alt="banner image" width={0} height={0} sizes="100vw" priority/>
                 </CarouselItem>
                 </CarouselContent>
             </Carousel>
