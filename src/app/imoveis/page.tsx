@@ -68,7 +68,7 @@ export default function Imovel() {
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 max-w-6xl pb-16">
                         {data?.map((imovel, idx) => (
-                            <Card className="w-[20rem] lg:w-full lg:h-full relative cursor-pointer overflow-hidden" key={idx}>
+                            <Card className="w-[20rem] lg:w-full lg:h-full relative cursor-pointer overflow-hidden first-letter:uppercase" key={idx}>
                                     <CardContent className="flex flex-col w-full h-full items-center justify-center">
                                         <Carousel className="w-full h-full">
                                             <CarouselContent onClick={() => router.push(`/imovel?id=${imovel.id}`)}>

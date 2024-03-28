@@ -67,6 +67,10 @@ export function Footer(){
                             <h3 className="text-lg text-black font-semibold">Contatos</h3>
                             <Link href="https://www.instagram.com/carlostortorella/" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Fale conosco</Link>
                         </div>
+                        <div>
+                            <h3 className="text-lg text-black font-semibold">Informações</h3>
+                            <Link href="https://www.instagram.com/carlostortorella/" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Quem sou eu</Link>
+                        </div>
                     </div>
                     <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
                     <p className="text-sm my-3">© 2024. Todos os Direitos reservados. gerenciado por JN Comunicação</p>

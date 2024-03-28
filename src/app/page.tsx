@@ -1,15 +1,14 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ArrowRightIcon, PersonIcon, Share2Icon } from "@radix-ui/react-icons"
-import { ImovelBanner } from "@/components/ui/imovel-banner";
 import { ImovelCard } from "@/components/ui/imovel-card";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { WhattsApButton } from "@/components/ui/whattsap-button";
 import { SearchForm } from "@/components/ui/serch-form";
 import Link from "next/link";
-
 import Carlos from "../../public/carlos.png";
 import { DoubleCard } from "@/components/ui/doubleCard";
+import HomeBannerCarousel from "@/components/home-banner-carousel";
 
 export default function Home() {
 
@@ -18,10 +17,9 @@ export default function Home() {
       <WhattsApButton />
       <div className="flex relative items-center justify-center w-full h-full">
         <div className="w-full h-screen">
-          <Image src="https://i.ibb.co/f4ZN9Q0/L-966f121b838c4c37ab11430267ed6020.jpg" 
-          className="brightness-75 object-cover" alt="banner image" width={0} height={0} sizes="100vw" fill priority/>
+          <HomeBannerCarousel />
         </div> 
-          <Image src={Carlos} alt="carlos foto" width={0} height={0} className="object-cover lg:h-[29rem] lg:w-[16.5rem] 2xl:h-[41rem] 2xl:w-[25rem] lg:block hidden absolute -bottom-[3.3rem] -right-8 transform scale-x-[-1]"/>
+          <Image src={Carlos} alt="carlos foto" width={0} height={0} className="object-cover lg:h-[29rem] lg:w-[16.5rem] 2xl:h-[41rem] 2xl:w-[25rem] lg:block hidden absolute bottom-0 -right-8 transform scale-x-[-1]"/>
           <div className="flex flex-col items-center justify-center w-full h-full absolute text-white  gap-6">
             <h1 className="text-3xl text-center lg:text-5xl font-semibold font-montSerrat">Compre ou Alugue Agora</h1>
             <SearchForm />

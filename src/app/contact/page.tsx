@@ -31,7 +31,7 @@ export default function Contact(){
                 <h1 className="text-secondary text-3xl font-medium mb-3">Fale conosco!</h1>
                 <span className="text-secondary mt-3 mb-3">Apenas preencha o formulário para retirar suas dúvidas e iremos responde-lo em breve.</span>
                 <span className="text-secondary text-sm mt-3 font-bold flex gap-2"><Phone size={20}/> Telefone: <span className="font-normal">(19) 99901-6424</span></span>
-                <span className="text-secondary text-sm mt-3 font-bold flex gap-2"><Envelope size={20}/> Email: <span className="font-normal">email@email.com</span></span>
+                <span className="text-secondary text-sm mt-3 font-bold flex gap-2"><Envelope size={20}/> Email: <span className="font-normal">carlostortorella2@gmail.com</span></span>
             </div>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 bg-secondary p-6 mt-8 max-w-lg w-full">
