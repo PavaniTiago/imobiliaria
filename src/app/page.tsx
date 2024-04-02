@@ -9,6 +9,7 @@ import Link from "next/link";
 import Carlos from "../../public/carlos.png";
 import { DoubleCard } from "@/components/ui/doubleCard";
 import HomeBannerCarousel from "@/components/home-banner-carousel";
+import image2 from "../../public/image2.jpg"
 
 export default function Home() {
 
@@ -17,7 +18,12 @@ export default function Home() {
       <WhattsApButton />
       <div className="flex relative items-center justify-center w-full h-full">
         <div className="w-full h-screen">
-          <HomeBannerCarousel />
+          <div className="h-full w-full block lg:hidden">
+            <Image alt="background image" src={image2} width={0} height={0} className="object-cover h-full" />
+          </div>
+          <div className="hidden lg:block">
+            <HomeBannerCarousel />
+          </div>
         </div> 
           <Image src={Carlos} alt="carlos foto" width={0} height={0} className="object-cover lg:h-[29rem] lg:w-[16.5rem] 2xl:h-[41rem] 2xl:w-[25rem] lg:block hidden absolute bottom-0 -right-8 transform scale-x-[-1]"/>
           <div className="flex flex-col items-center justify-center w-full h-full absolute text-white  gap-6">

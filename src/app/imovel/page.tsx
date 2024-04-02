@@ -111,7 +111,7 @@ function page() {
           ))}
               <div className='max-w-xl 2xl:max-w-3xl mt-12'>
             {data?.map((item, index) => (
-              <div className="flex flex-col items-start gap-3 max-w-xl 2xl:max-w-3xl justify-center first-letter:uppercase"> 
+              <div className="flex flex-col items-start gap-3 mb-8 max-w-xl 2xl:max-w-3xl justify-center first-letter:uppercase"> 
               <h1 className='text-xl font-semibold text-white'>{item.mobiliado || item.aceitaFinanciamento || item.aceitaPermuta || item.apartamentoGarden || item.aquecimentoSolar || item.areaDeServico || item.armarioBanheiro || item.armarioCloset || item.armarioCozinha || item.armarioDormitorioDeEmpregada || item.armarioEscritorio || item.armarioHomeTheater || item.armarioQuarto || item.armarioSala || item.banheiroDeEmpregada || item.beiraMar || item.campoDeFutebol || item.carpeteDeMadeira || item.cobertura || item.dormitorioDeEmpregada || item.pets || item.pisoArdosia || item.pisoCeramico || item.pisoCimentoQueimado || item.pisoDeGranito || item.pisoDeMarmore || item.pisoLaminado || item.pisoVinilico || item.portaoEletronico || item.quadraPoliesportiva || item.tacoDeMadeira || item.vestiario ? "Características" : ""}</h1>
                     <h2 className='text-md text-white capitalize'>
                       {`
