@@ -86,7 +86,7 @@ export default function Imovel() {
                                                 <h2 className="text-sm text-secondary-foreground font-semibold leading-tight first-letter:uppercase">{capitalizeFirstLetter(imovel.title) + ' - ' + imovel.cidade + ' - ' + imovel.estadoSigla.toUpperCase()}</h2>
                                                 <span className="text-sm leading-tight text-secondary-foreground mt-1">cep: {imovel.cep}</span>
                                                 <span className="text-sm text-secondary-foreground leading-tight mt-2">{imovel?.m2} m<span className='align-super text-xs'>2</span> &#x2022; {imovel?.rooms} Quartos{" "} &#x2022; {imovel?.suites} Suites{" "} &#x2022;{imovel.bathrooms} Banheiros{" "} &#x2022; {imovel.vagas} Vagas</span>
-                                                <span className="text-sm font-semibold text-secondary-foreground mt-2">{imovel?.loja ? "Locação": "Venda"}</span>
+                                                <span className="text-sm font-semibold text-secondary-foreground mt-2">{imovel?.aluguel ? "Locação": "Venda"}</span>
                                                 <span className="text-base font-semibold text-secondary-foreground">R${imovel.price}</span>
                                         </div>
                                     </CardContent>
