@@ -120,33 +120,33 @@ function page() {
                         ${item.aceitaPermuta ? "aceita Permuta," : ""}
                         ${item.apartamentoGarden ? "apartamento Garden," : ""}
                         ${item.aquecimentoSolar ? "aquecimento Solar," : ""}
-                        ${item.areaDeServico ? "area De Servico," : ""}
-                        ${item.armarioBanheiro ? "armario Banheiro," : ""}
-                        ${item.armarioCloset ? "armario Closet," : ""}
-                        ${item.armarioCozinha ? "armario Cozinha," : ""}
-                        ${item.armarioDormitorioDeEmpregada ? "armario Dormitorio De Empregada," : ""}
-                        ${item.armarioEscritorio ? "armario Escritorio," : ""}
-                        ${item.armarioHomeTheater ? "armarioHome Theater," : ""}
-                        ${item.armarioQuarto ? "armario Quarto," : ""}
-                        ${item.armarioSala ? "armario Sala," : ""}
+                        ${item.areaDeServico ? "área De Servico," : ""}
+                        ${item.armarioBanheiro ? "armário Banheiro," : ""}
+                        ${item.armarioCloset ? "armário Closet," : ""}
+                        ${item.armarioCozinha ? "armário Cozinha," : ""}
+                        ${item.armarioDormitorioDeEmpregada ? "armário Dormitório De Empregada," : ""}
+                        ${item.armarioEscritorio ? "armário Escritório," : ""}
+                        ${item.armarioHomeTheater ? "armário Home Theater," : ""}
+                        ${item.armarioQuarto ? "armário Quarto," : ""}
+                        ${item.armarioSala ? "armário Sala," : ""}
                         ${item.banheiroDeEmpregada ? "banheiro De Empregada," : ""}
                         ${item.beiraMar ? "beira Mar," : ""}
                         ${item.campoDeFutebol ? "campo De Futebol," : ""}
                         ${item.carpeteDeMadeira ? "carpete De Madeira," : ""}
                         ${item.cobertura ? "cobertura," : ""}
-                        ${item.dormitorioDeEmpregada ? "dormitorio De Empregada," : ""}
+                        ${item.dormitorioDeEmpregada ? "dormitório De Empregada," : ""}
                         ${item.pets ? "aceita pets," : ""}
-                        ${item.pisoArdosia ? "piso Ardosia," : ""}
-                        ${item.pisoCeramico ? "piso Ceramico," : ""}
-                        ${item.pisoCimentoQueimado ? "piso Ciment oQueimado," : ""}
+                        ${item.pisoArdosia ? "piso Ardósia," : ""}
+                        ${item.pisoCeramico ? "piso Cerâmico," : ""}
+                        ${item.pisoCimentoQueimado ? "piso Cimento Queimado," : ""}
                         ${item.pisoDeGranito ? "piso De Granito," : ""}
-                        ${item.pisoDeMarmore ? "piso De Marmore," : ""}
+                        ${item.pisoDeMarmore ? "piso De Mármore," : ""}
                         ${item.pisoLaminado ? "piso Laminado," : ""}
-                        ${item.pisoVinilico ? "piso Vinilico," : ""}
-                        ${item.portaoEletronico ? "portao Eletronico," : ""}
+                        ${item.pisoVinilico ? "piso Vinílico," : ""}
+                        ${item.portaoEletronico ? "portão Eletrônico," : ""}
                         ${item.quadraPoliesportiva ? "quadra Poliesportiva," : ""}
                         ${item.tacoDeMadeira ? "taco De Madeira," : ""}
-                        ${item.vestiario ? "vestiario," : ""}
+                        ${item.vestiario ? "vestiário," : ""}
                       `}
                     </h2>
             </div>
