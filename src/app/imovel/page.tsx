@@ -56,8 +56,7 @@ function page() {
                         
                       ${item.aluguel ? "para alugar" : "á venda"}
                       `}
-                      com {item.m2.toString()} m<span className='align-super text-sm'>2 </span>
-                      em {item?.cidade}-{item?.estadoSigla}
+                      com {item.m2.toString()} m<span className='align-super text-sm'>2 </span> <span className='ml-2'> em</span> {item?.cidade}-{item?.estadoSigla}
                   </h2>
 
                   <Separator className='max-w-xl 2xl:max-w-3xl bg-neutral-300/90 mt-4'/>
