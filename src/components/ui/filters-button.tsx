@@ -120,7 +120,7 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                             </div>
                             <button className="flex my-2 gap-1 items-center justify-start text-sm font-medium text-neutral-800" onClick={() => setIsVisible(!isVisible)}>Ver mais <ArrowDown size={18}/></button>
                             {isVisible && 
-                                <div className="grid h-full pt-4 max-h-64 overflow-y-auto grid-flow-row grid-cols-2 w-full place-content-center gap-3">    
+                                <div className="grid h-full max-h-60 pt-2 overflow-y-auto grid-flow-row grid-cols-2 w-full place-content-center gap-3">    
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="banheiroDeEmpregada" id="r8" />
                                         <Label htmlFor="r8">Banheiro de empregada</Label>
@@ -129,10 +129,10 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                                         <RadioGroupItem value="campoDeFutebol" id="r9" />
                                         <Label htmlFor="r9">Campo de futebol</Label>
                                     </RadioGroup>
-                                    <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
+                                    {/* <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="carpeteDeMadeira" id="r10" />
                                         <Label htmlFor="r10">Carpete de madeira</Label>
-                                    </RadioGroup>
+                                    </RadioGroup> */}
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="dormitorioDeEmpregada" id="r11" />
                                         <Label htmlFor="r11">Dormitorio de empregada</Label>
@@ -145,10 +145,10 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                                         <RadioGroupItem value="pisoArdosia" id="r13" />
                                         <Label htmlFor="r13">Piso Ardosia</Label>
                                     </RadioGroup>
-                                    <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
+                                    {/* <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="pisoCimentoQueimado" id="r14" />
                                         <Label htmlFor="r14">Piso cimento queimado</Label>
-                                    </RadioGroup>
+                                    </RadioGroup> */}
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="pisoMarmore" id="r15" />
                                         <Label htmlFor="r15">Piso mármore</Label>
@@ -165,10 +165,10 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                                         <RadioGroupItem value="semCondominio" id="r18" />
                                         <Label htmlFor="r18">Sem condomínio</Label>
                                     </RadioGroup>
-                                    <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
+                                    {/* <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="tacoDeMadeira" id="r19" />
                                         <Label htmlFor="r19">Taco de Madeira</Label>
-                                    </RadioGroup>
+                                    </RadioGroup> */}
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="armarioAreaDeServico" id="r20" />
                                         <Label htmlFor="r20">Ármario área de serviço</Label>
@@ -181,7 +181,7 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                                         <RadioGroupItem value="armarioCozinha" id="r22" />
                                         <Label htmlFor="r22">Ármario cozinha</Label>
                                     </RadioGroup>
-                                    <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
+                                    {/* <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="armarioDormitorioDeEmpregada" id="r23" />
                                         <Label htmlFor="r23">Ármario dormitório de empregada</Label>
                                     </RadioGroup>
@@ -192,26 +192,26 @@ export function FiltersButtons({ imovelType, mobiliado, name, price, rooms, suit
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="armarioHomeTheater" id="r25" />
                                         <Label htmlFor="r25">Ármario home theater</Label>
-                                    </RadioGroup>
+                                    </RadioGroup> */}
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="armarioQuarto" id="r26" />
                                         <Label htmlFor="r26">Ármario quarto</Label>
                                     </RadioGroup>
-                                    <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
+                                    {/* <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="armarioSala" id="r27" />
                                         <Label htmlFor="r27">Ármario sala</Label>
                                     </RadioGroup>
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="pisoVinilico" id="r28" />
                                         <Label htmlFor="r28">Piso vinilico</Label>
-                                    </RadioGroup>
+                                    </RadioGroup> */}
                                     <RadioGroup onValueChange={(value) => pushData(value)} className="flex items-center space-x-2">
                                         <RadioGroupItem value="vestiario" id="r29" />
                                         <Label htmlFor="r29">Vestiário</Label>
                                     </RadioGroup>
                                 </div>
                             } 
-                        <Button className="w-full absolute bottom-0" onClick={SetSearch}>Encontrar imóveis</Button>
+                        <Button className="w-full absolute -bottom-4" onClick={SetSearch}>Encontrar imóveis</Button>
                         </RadioGroup>
                     </div>
                 </div>
