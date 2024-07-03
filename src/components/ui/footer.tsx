@@ -5,7 +5,7 @@ import { Button } from "./button";
 import { Card, CardHeader, CardContent, CardFooter } from "./card";
 import { UseImoveis } from "@/hooks/useImoveis";
 import { useQuery } from "@tanstack/react-query";
-import { InstagramLogo } from "@phosphor-icons/react";
+import { FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
 import Link from "next/link";
 import Logo from "../../../public/logo2.png"
 import Image from "next/image";
@@ -72,13 +72,19 @@ export function Footer(){
                             <Link href="https://www.instagram.com/carlostortorella/" className="text-md text-black hover:bg-gray-200 transition-colors cursor-pointer">Quem sou eu</Link>
                         </div>
                     </div>
-                    <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
+                    <div className="flex items-center gap-2">
+                        <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
+                        <Link target="_blank" href="https://web.facebook.com/people/Carlos-Tortorella-Corretor/61561529535184/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><FacebookLogo className="text-black" size={20}/></Button></Link>
+                    </div>
                     <p className="text-sm my-3">© 2024. Todos os Direitos reservados. gerenciado por JN Comunicação</p>
                 </div>
             </div>
                 <div className="block lg:hidden bg-secondary">
                     <div className="flex flex-col items-center justify-center px-8">
-                        <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
+                        <div className="flex items-center gap-2">
+                            <Link target="_blank" href="https://www.instagram.com/carlostortorella/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><InstagramLogo className="text-black" size={20}/></Button></Link>
+                            <Link target="_blank" href="https://web.facebook.com/people/Carlos-Tortorella-Corretor/61561529535184/" ><Button className="bg-transparent text-white rounded-full border border-black p-2 mt-4"><FacebookLogo className="text-black" size={20}/></Button></Link>
+                        </div>
                         <p className="text-sm my-3 text-center">© 2024. Todos os Direitos reservados. gerenciado por JN Comunicação</p>
                     </div>
                 </div>
